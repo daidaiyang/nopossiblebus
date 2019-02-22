@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_color"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y127"
+        android:background="@color/text_black_0f">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="进货购物车（3）"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/textSize46"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/x40"
+            />
+
+        <TextView
+            android:id="@+id/ingood_cart_manage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="管理"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="@dimen/x43"
+            android:textSize="@dimen/textSize46"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/x40"
+            />
+    </RelativeLayout>
+
+    <cn.bingoogolapple.refreshlayout.BGARefreshLayout
+        android:id="@+id/ingood_cart_bga"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/ingood_cart_bga_recy"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y128">
+
+        <CheckBox
+            android:id="@+id/ingood_cart_check"
+            android:layout_width="@dimen/x52"
+            android:layout_height="@dimen/y52"
+            android:background="@drawable/selector_allgood"
+            android:button="@null"
+            android:checked="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x40"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全选"
+            android:layout_marginLeft="@dimen/x115"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/textSize37"
+            android:textColor="@color/text_black_69"
+            />
+
+        <TextView
+            android:id="@+id/ingood_cart_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="已选23件，合计："
+            android:textSize="@dimen/textSize35"
+            android:textColor="@color/black"
+            android:layout_marginLeft="@dimen/x269"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/ingood_cart_allprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="￥655.00"
+            android:textSize="@dimen/textSize46"
+            android:textColor="@color/text_price"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="@dimen/x351"
+            />
+        
+        <TextView
+            android:id="@+id/ingood_cart_account"
+            android:layout_width="@dimen/x317"
+            android:layout_height="match_parent"
+            android:background="@color/text_black_0f"
+            android:layout_alignParentEnd="true"
+            android:text="结算"
+            android:textSize="@dimen/textSize46"
+            android:textColor="@color/white"
+            android:gravity="center"
+            />
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_goods"
+        android:icon="@drawable/selector_drawable_goods"
+        android:enabled="true"
+        android:title="@string/title_good" />
+
+    <item
+        android:id="@+id/navigation_cart"
+        android:icon="@drawable/selector_cart"
+        android:enabled="true"
+        android:title="@string/title_cart" />
+
+    <item
+        android:id="@+id/navigation_order"
+        android:icon="@drawable/selector_ingood"
+        android:enabled="true"
+        android:title="@string/title_ingood" />
+    <item
+        android:id="@+id/navigation_anaylsis"
+        android:icon="@drawable/selector_analysis"
+        android:enabled="true"
+        android:title="@string/title_analysis" />
+
+</menu>

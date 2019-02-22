@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="@dimen/x750"
+        android:layout_height="@dimen/y346"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rect_circle_x30_white"
+       >
+
+        <LinearLayout
+            android:id="@+id/dialog_recognition_close"
+            android:layout_width="@dimen/x100"
+            android:layout_alignParentEnd="true"
+            android:layout_height="@dimen/y100">
+        <ImageView
+            android:layout_width="@dimen/x63"
+            android:layout_height="@dimen/y63"
+            android:layout_marginRight="@dimen/x40"
+            android:layout_marginTop="@dimen/x32"
+            android:scaleType="centerInside"
+            android:src="@drawable/close" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/x86"
+            android:textSize="@dimen/textSize46"
+            android:text="@string/yysbz"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x30"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/y222"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal">
+            <com.nopossiblebus.customview.CircleImageView
+                android:id="@+id/dialog_recognition_circlr1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle_point"
+                />
+            <com.nopossiblebus.customview.CircleImageView
+                android:id="@+id/dialog_recognition_circlr2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x17"
+                android:background="@drawable/circle_point"/>
+            <com.nopossiblebus.customview.CircleImageView
+                android:id="@+id/dialog_recognition_circlr3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x17"
+                android:background="@drawable/circle_point"/>
+            <com.nopossiblebus.customview.CircleImageView
+                android:id="@+id/dialog_recognition_circlr4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x17"
+                android:background="@drawable/circle_point"/>
+            <com.nopossiblebus.customview.CircleImageView
+                android:id="@+id/dialog_recognition_circlr5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x17"
+                android:background="@drawable/circle_point"/>
+            <com.nopossiblebus.customview.CircleImageView
+                android:id="@+id/dialog_recognition_circlr6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x17"
+                android:background="@drawable/circle_point"/>
+            <com.nopossiblebus.customview.CircleImageView
+                android:id="@+id/dialog_recognition_circlr7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x17"
+                android:background="@drawable/circle_point"/>
+            <com.nopossiblebus.customview.CircleImageView
+                android:id="@+id/dialog_recognition_circlr8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x17"
+                android:background="@drawable/circle_point"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

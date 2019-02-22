@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">nopossiblebus</string>
+    <string name="yysbz">语音识别中</string>
+    <string name="title_good">商品</string>
+    <string name="title_cart">购物车</string>
+    <string name="title_ingood">进货单</string>
+    <string name="title_analysis">进货分析</string>
+</resources>

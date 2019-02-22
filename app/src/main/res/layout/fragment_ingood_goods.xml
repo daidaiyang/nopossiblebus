@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_color"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/ingood_goods_txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x156"
+            android:text="长按说话"
+            android:includeFontPadding="false"
+            android:textColor="@color/text_black_33"
+            android:textSize="@dimen/textSize40" />
+
+        <TextView
+            android:id="@+id/ingood_goods_txt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x27"
+            android:includeFontPadding="false"
+            android:textColor="@color/text_black_33"
+            android:text="搜索您要购买的商品"
+            android:textSize="@dimen/textSize40" />
+
+        <ImageView
+            android:id="@+id/ingood_goods_low_icon"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/x35"
+            android:layout_marginTop="@dimen/x86"
+            android:src="@drawable/jiatou_xia" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x109">
+            <com.nopossiblebus.customview.WaveView
+                android:id="@+id/ingood_goods_icon"
+                android:layout_width="@dimen/x576"
+                android:layout_height="@dimen/y576"
+                android:layout_gravity="center"
+                />
+            <com.nopossiblebus.customview.CircleImageView
+                android:visibility="gone"
+                android:id="@+id/ingood_goods_circle"
+                android:layout_width="@dimen/x470"
+                android:layout_height="@dimen/x470"
+                android:layout_gravity="center"
+                android:background="@drawable/circle"/>
+            <ImageView
+                android:id="@+id/ingood_goods_icon_img"
+                android:layout_width="@dimen/x432"
+                android:layout_height="@dimen/x432"
+                android:layout_gravity="center"
+                android:src="@drawable/record_button"/>
+        </FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y180"
+            android:orientation="horizontal">
+
+            <LinearLayout
+
+                android:id="@+id/first_function_scan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/x184"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/first_function_scan_icon"
+                    android:layout_width="@dimen/x173"
+                    android:layout_height="@dimen/y173"
+                    android:src="@drawable/scan"/>
+
+                <TextView
+                    android:id="@+id/first_function_scan_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x42"
+                    android:textSize="@dimen/textSize40"
+                    android:textColor="@color/text_black"
+                    android:text="扫码找货" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/first_function_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x367"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/first_function_order_icon"
+                    android:layout_width="@dimen/x173"
+                    android:layout_height="@dimen/y173"
+                    android:src="@drawable/payorder"
+                    />
+
+                <TextView
+                    android:id="@+id/first_function_order_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x42"
+                    android:textSize="@dimen/textSize40"
+                    android:textColor="@color/text_black"
+                    android:text="一键下单" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

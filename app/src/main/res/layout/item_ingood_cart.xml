@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/background_color"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="@dimen/y406">
+
+    <RelativeLayout
+        android:id="@+id/item_rootview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x386"
+        android:background="@drawable/rect_circle_x30_white"
+        android:layout_marginRight="@dimen/x20"
+        android:layout_marginLeft="@dimen/x20">
+        <CheckBox
+            android:id="@+id/item_check"
+            android:layout_width="@dimen/x52"
+            android:layout_height="@dimen/y52"
+            android:button="@null"
+            android:background="@drawable/selector_allgood"
+            android:checked="true"
+            android:layout_marginTop="@dimen/y124"
+            android:layout_marginLeft="@dimen/x35"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y242"
+            android:orientation="horizontal"
+            android:layout_marginLeft="@dimen/x120"
+            >
+            <ImageView
+                android:id="@+id/item_img"
+                android:layout_width="@dimen/x184"
+                android:layout_height="@dimen/y184"
+                android:scaleType="centerInside"
+                android:src="@color/colorPrimary"
+                android:layout_marginTop="@dimen/x58"
+                />
+            <TextView
+                android:id="@+id/item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="家乐鸡精替代味精增鲜提味450g*2袋装"
+                android:textSize="@dimen/textSize40"
+                android:textColor="@color/black"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_marginLeft="@dimen/x36"
+                android:layout_marginRight="@dimen/x36"
+                android:layout_marginTop="@dimen/x72"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x120"
+            android:layout_marginTop="@dimen/y265"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="销： "
+                android:textSize="@dimen/textSize35"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:id="@+id/item_xiao_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥28.00"
+                android:textSize="@dimen/textSize35"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="进： "
+                android:layout_marginLeft="@dimen/x69"
+                android:textSize="@dimen/textSize35"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:id="@+id/item_jin_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥28.00"
+                android:textSize="@dimen/textSize35"
+                android:textColor="@color/text_price"
+                />
+
+                <ImageView
+                    android:id="@+id/item_sub"
+                    android:layout_width="@dimen/x63"
+                    android:layout_height="@dimen/y63"
+                    android:src="@drawable/sub_noclick"
+                    android:layout_marginLeft="@dimen/x90"
+                    />
+
+                <TextView
+                    android:id="@+id/item_num"
+                    android:layout_width="@dimen/x100"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textSize="@dimen/textSize46"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    />
+
+            <ImageView
+                android:id="@+id/item_plus"
+                android:layout_width="@dimen/x63"
+                android:layout_height="@dimen/y63"
+                android:src="@drawable/plus"
+                />
+
+            <TextView
+                android:id="@+id/item_standar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="箱"
+                android:textSize="@dimen/textSize35"
+                android:layout_marginLeft="@dimen/x39"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
