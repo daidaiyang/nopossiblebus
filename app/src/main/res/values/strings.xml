@@ -6,4 +6,5 @@
     <string name="title_ingood">进货单</string>
     <string name="title_analysis">进货分析</string>
     <string name="jhdgl">进货单管理</string>
+    <string name="identify_noti">请上传真实合法的营业执照和食品流通许可证，保持证件清晰可见，否则将无法通过审核。仅支持.jpg格式。</string>
 </resources>
