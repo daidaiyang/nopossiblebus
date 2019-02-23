@@ -14,6 +14,7 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.nopossiblebus.R;
+import com.nopossiblebus.activies.confirorder.ConfirorderActivity;
 import com.nopossiblebus.activies.identify.IdentifyActivity;
 import com.nopossiblebus.adapter.IngoodcartItemAdapter;
 import com.nopossiblebus.mvp.MVPBaseFragment;
@@ -104,7 +105,7 @@ public class CartFragment extends MVPBaseFragment<CartContract.View, CartPresent
             case R.id.ingood_cart_manage:
                 break;
             case R.id.ingood_cart_account:
-                Intent intent = new Intent(getContext(), IdentifyActivity.class);
+                Intent intent = new Intent(getContext(), ConfirorderActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
                 break;
