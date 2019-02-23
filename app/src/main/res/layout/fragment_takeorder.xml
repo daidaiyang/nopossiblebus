@@ -1,10 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
     android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
+    
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="接单"/>
+        android:background="@color/text_black_0f"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textSize46"
+            android:layout_marginLeft="@dimen/x58"
+            android:layout_marginTop="@dimen/x54"
+            android:layout_marginBottom="@dimen/x54"
+            android:textColor="@color/white"
+            android:includeFontPadding="false"
+            android:textStyle="bold"
+            android:text="今日概况"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_marginLeft="@dimen/x58"
+                android:layout_marginBottom="@dimen/x43"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/takeorder_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize52"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:includeFontPadding="false"
+                    android:text="865"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize35"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/x20"
+                    android:includeFontPadding="false"
+                    android:text="今日积分"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="@dimen/x337"
+                android:layout_marginBottom="@dimen/x43"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/takeorder_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize52"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:includeFontPadding="false"
+                    android:text="865"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize35"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/x20"
+                    android:includeFontPadding="false"
+                    android:text="今日接单"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="@dimen/x616"
+                android:layout_marginBottom="@dimen/x43"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/takeorder_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize52"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:includeFontPadding="false"
+                    android:text="￥8787.65"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize35"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/x20"
+                    android:includeFontPadding="false"
+                    android:text="今日流水"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/takeorder_rg"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="@dimen/y127">
+            <RadioButton
+                android:id="@+id/takeorder_rbcanTake"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/x58"
+                android:paddingRight="@dimen/x43"
+                android:button="@null"
+                android:textColor="@color/selector_text_ingoodorder"
+                android:text="可抢单"
+                android:checked="true"
+                />
+            <View
+                android:layout_width="@dimen/x3"
+                android:layout_height="@dimen/x29"
+                android:background="@color/text_black_66"
+                android:layout_gravity="center_vertical"
+                />
+            <RadioButton
+                android:id="@+id/takeorder_needSend"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/x58"
+                android:paddingRight="@dimen/x43"
+                android:button="@null"
+                android:textColor="@color/selector_text_ingoodorder"
+                android:text="待配送"
+                />
+            <View
+                android:layout_width="@dimen/x3"
+                android:layout_height="@dimen/x29"
+                android:background="@color/text_black_66"
+                android:layout_gravity="center_vertical"
+                />
+            <RadioButton
+                android:id="@+id/takeorder_rbfinish"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/x58"
+                android:paddingRight="@dimen/x43"
+                android:button="@null"
+                android:textColor="@color/selector_text_ingoodorder"
+                android:text="已完成"
+                />
+        </RadioGroup>
+
+    <cn.bingoogolapple.refreshlayout.BGARefreshLayout
+        android:id="@+id/takeorder_bgaLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/takeorder_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
+
+
 
 </LinearLayout>
