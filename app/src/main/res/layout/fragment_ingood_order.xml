@@ -1,14 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:background="@color/background">
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="进货订单"/>
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y127"
+        android:background="@color/text_black_0f"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textSize46"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/x40"
+        android:text="@string/jhdgl"/>
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y127"
+        android:orientation="horizontal">
+        <RadioGroup
+            android:id="@+id/ingood_order_rg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/ingood_order_rb_all"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:text="全部"
+                android:paddingLeft="@dimen/x58"
+                android:paddingRight="@dimen/x45"
+                android:gravity="center"
+                android:textColor="@color/selector_text_ingoodorder"
+                android:textStyle=""
+                android:checked="true"
+                />
+            <View
+                android:layout_width="@dimen/x3"
+                android:layout_height="@dimen/x29"
+                android:layout_gravity="center"
+                android:background="@color/text_black_66"/>
+            <RadioButton
+                android:id="@+id/ingood_order_rb_untake"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:text="待收货"
+                android:paddingLeft="@dimen/x45"
+                android:paddingRight="@dimen/x45"
+                android:gravity="center"
+                android:textColor="@color/selector_text_ingoodorder"
+                />
+            <View
+                android:layout_width="@dimen/x3"
+                android:layout_height="@dimen/x29"
+                android:layout_gravity="center"
+                android:background="@color/text_black_66"/>
+            <RadioButton
+                android:id="@+id/ingood_order_unevaluate"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:text="待评价"
+                android:paddingLeft="@dimen/x45"
+                android:paddingRight="@dimen/x45"
+                android:gravity="center"
+                android:textColor="@color/selector_text_ingoodorder"
+                />
+            <View
+                android:layout_width="@dimen/x3"
+                android:layout_height="@dimen/x29"
+                android:layout_gravity="center"
+                android:background="@color/text_black_66"/>
+            <RadioButton
+                android:id="@+id/ingood_order_rb_finish"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:text="已完成"
+                android:paddingLeft="@dimen/x45"
+                android:paddingRight="@dimen/x45"
+                android:gravity="center"
+                android:textColor="@color/selector_text_ingoodorder"
+                />
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <cn.bingoogolapple.refreshlayout.BGARefreshLayout
+        android:id="@+id/ingood_order_rga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/ingood_order_rga_recy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
+
+
+</LinearLayout>

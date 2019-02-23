@@ -12,4 +12,5 @@
     <dimen name="textSize40">@dimen/x40</dimen>
     <dimen name="textSize42">@dimen/x42</dimen>
     <dimen name="textSize46">@dimen/x46</dimen>
+    <dimen name="textSize52">@dimen/x52</dimen>
 </resources>

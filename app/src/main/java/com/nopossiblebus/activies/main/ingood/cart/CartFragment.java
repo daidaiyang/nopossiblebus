@@ -1,6 +1,7 @@
 package com.nopossiblebus.activies.main.ingood.cart;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -13,6 +14,7 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.nopossiblebus.R;
+import com.nopossiblebus.activies.identify.IdentifyActivity;
 import com.nopossiblebus.adapter.IngoodcartItemAdapter;
 import com.nopossiblebus.mvp.MVPBaseFragment;
 import com.nopossiblebus.utils.RecycleViewDivider;
@@ -71,8 +73,8 @@ public class CartFragment extends MVPBaseFragment<CartContract.View, CartPresent
         BGARefreshViewHolder holder = new BGANormalRefreshViewHolder(getContext(),true);
         ingoodCartBga.setRefreshViewHolder(holder);
         // 为了增加下拉刷新头部和加载更多的通用性，提供了以下可选配置选项  -------------START
-        // 设置正在加载更多时不显示加载更多控件
-        ingoodCartBga.setIsShowLoadingMoreView(false);
+        // 设置正在加载更多时显示加载更多控件
+        ingoodCartBga.setIsShowLoadingMoreView(true);
         // 设置正在加载更多时的文本
         holder.setLoadingMoreText("加载中...");
 
@@ -102,6 +104,9 @@ public class CartFragment extends MVPBaseFragment<CartContract.View, CartPresent
             case R.id.ingood_cart_manage:
                 break;
             case R.id.ingood_cart_account:
+                Intent intent = new Intent(getContext(), IdentifyActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
                 break;
         }
     }
