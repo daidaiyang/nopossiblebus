@@ -6,6 +6,7 @@
     android:background="@drawable/rect_circle_x29_eb_top">
 
     <ImageView
+        android:id="@+id/close"
         android:layout_width="@dimen/x98"
         android:layout_height="@dimen/x98"
         android:layout_alignParentEnd="true"
@@ -14,27 +15,29 @@
         android:src="@drawable/close_order_detail" />
 
     <LinearLayout
-        android:id="@+id/top_unfinish"
+        android:id="@+id/unfinish_ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:visibility="gone">
+        >
 
         <TextView
+            android:id="@+id/unfinish_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/x40"
-            android:layout_marginTop="@dimen/y58"
+            android:layout_marginTop="@dimen/y48"
             android:includeFontPadding="false"
             android:text="买家要求14日09:30完成配送"
             android:textColor="@color/black"
             android:textSize="@dimen/textSize40" />
 
         <TextView
+            android:id="@+id/unfinish_lefttime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/x40"
-            android:layout_marginTop="@dimen/x29"
+            android:layout_marginTop="@dimen/x20"
             android:includeFontPadding="false"
             android:text="剩余45分钟"
             android:textColor="@color/black"
@@ -43,12 +46,15 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/finish_ll"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/y58"
         android:orientation="vertical">
 
         <com.nopossiblebus.customview.StarBar
+            android:id="@+id/finish_topBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -59,6 +65,7 @@
             ratingbar:starSize="@dimen/x32" />
 
         <LinearLayout
+            android:id="@+id/finish_commont_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
@@ -80,6 +87,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/finish_commont_ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -102,6 +110,7 @@
                     android:textColor="@color/text_black_66"
                     android:text="商品评分"/>
                 <com.nopossiblebus.customview.StarBar
+                    android:id="@+id/finish_goodsBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/x58"
@@ -126,6 +135,7 @@
                     android:textColor="@color/text_black_66"
                     android:text="服务评分"/>
                 <com.nopossiblebus.customview.StarBar
+                    android:id="@+id/finish_serviceBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/x58"
@@ -151,6 +161,7 @@
                     android:textColor="@color/text_black_66"
                     android:text="评价内容"/>
                 <EditText
+                    android:id="@+id/finish_commont"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="@dimen/x90"
@@ -172,6 +183,7 @@
                 android:layout_marginBottom="@dimen/x45"
                 android:orientation="horizontal">
                 <CheckBox
+                    android:id="@+id/finish_tag1"
                     android:layout_width="@dimen/x127"
                     android:layout_height="@dimen/y46"
                     android:button="@null"
@@ -184,6 +196,7 @@
 
                     />
                 <CheckBox
+                    android:id="@+id/finish_tag2"
                     android:layout_width="@dimen/x127"
                     android:layout_height="@dimen/y46"
                     android:button="@null"
@@ -197,6 +210,7 @@
 
                     />
                 <CheckBox
+                    android:id="@+id/finish_tag3"
                     android:layout_width="@dimen/x127"
                     android:layout_height="@dimen/y46"
                     android:button="@null"

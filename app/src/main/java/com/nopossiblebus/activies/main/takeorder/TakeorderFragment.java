@@ -1,6 +1,7 @@
 package com.nopossiblebus.activies.main.takeorder;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 
 import com.nopossiblebus.R;
 import com.nopossiblebus.adapter.TakeOrderItemAdapter;
+import com.nopossiblebus.dialog.TakeOrderDetailDialog;
 import com.nopossiblebus.mvp.MVPBaseFragment;
 import com.nopossiblebus.utils.RecycleViewDivider;
 
@@ -58,6 +60,7 @@ public class TakeorderFragment extends MVPBaseFragment<TakeorderContract.View, T
 
     private TakeOrderItemAdapter mAdapter;
     private List<String> mData;
+    private TakeOrderDetailDialog dialog;
 
     @Nullable
     @Override
@@ -107,7 +110,10 @@ public class TakeorderFragment extends MVPBaseFragment<TakeorderContract.View, T
 
     @Override
     public void onItemClick(View v, int position) {
-        Log.d("ssssssssssssssssssss","itemitemitemitemitem");
+        if (dialog == null){
+            dialog = new TakeOrderDetailDialog(getContext());
+        }
+        dialog.show();
     }
 
     @Override

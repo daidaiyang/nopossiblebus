@@ -20,6 +20,8 @@
         </activity>
         <activity android:name=".activies.identify.IdentifyActivity"/>
         <activity android:name=".activies.confirorder.ConfirorderActivity"/>
+        <activity android:name=".dialog.TakeOrderDetailDialog"
+            android:theme="@style/BottomDialogStyle"></activity>
     </application>
 
 </manifest>

@@ -23,6 +23,11 @@ public abstract class MVPBaseFragment<V extends BaseView,T extends BasePresenter
      * 简单的退出和跳转动画
      */
     private boolean animCon = true;
+
+    public void setAnimCon(boolean animCon) {
+        this.animCon = animCon;
+    }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +52,7 @@ public abstract class MVPBaseFragment<V extends BaseView,T extends BasePresenter
             getActivity().overridePendingTransition(R.anim.in_from_right,R.anim.out_to_left);
         super.startActivityForResult(intent, requestCode);
     }
+
 
     @Override
     public void onDestroy() {

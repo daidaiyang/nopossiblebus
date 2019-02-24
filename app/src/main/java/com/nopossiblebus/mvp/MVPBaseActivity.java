@@ -40,7 +40,7 @@ public abstract class MVPBaseActivity<V extends BaseView,T extends BasePresenter
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
-    protected void setAnimCon(boolean animCon) {
+    public void setAnimCon(boolean animCon) {
         this.animCon = animCon;
     }
     @Override
