@@ -27,5 +27,8 @@
     <color name="text_black_31">#313131</color>
     <color name="text_black_f2">#F2F2F2</color>
     <color name="text_black_dd">#DDDDDD</color>
+    <color name="text_black_e6">#1B61E6</color>
+    <color name="text_black_1b">#E61B1B</color>
     <color name="text_price">#FF0000</color>
+    <color name="text_price2">#EC0000</color>
 </resources>

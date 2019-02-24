@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/background"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/x35"
+    android:paddingRight="@dimen/x35"
+    android:paddingBottom="@dimen/x35"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/detail_img"
+        android:layout_width="@dimen/x184"
+        android:layout_height="@dimen/y184"
+        android:layout_marginTop="@dimen/x35"
+        android:src="@color/colorPrimary"/>
+
+    <TextView
+        android:id="@+id/detail_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textSize="@dimen/textSize35"
+        android:layout_marginTop="@dimen/x40"
+        android:layout_marginLeft="@dimen/x245"
+        android:includeFontPadding="false"
+        android:text="克莉娜橄榄油3L家庭装炒菜食用油西班牙原油进口"/>
+
+    <TextView
+        android:id="@+id/detail_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textSize46"
+        android:textColor="@color/text_price2"
+        android:layout_marginTop="@dimen/x156"
+        android:layout_marginLeft="@dimen/x245"
+        android:includeFontPadding="false"
+        android:text="￥324.00"/>
+    <TextView
+        android:id="@+id/detail_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textSize35"
+        android:textColor="@color/text_black_66"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/x162"
+        android:layout_marginLeft="@dimen/x245"
+        android:includeFontPadding="false"
+        android:text="2瓶"/>
+
+</RelativeLayout>

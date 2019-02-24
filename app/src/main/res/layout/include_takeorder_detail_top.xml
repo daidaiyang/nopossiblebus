@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ratingbar="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rect_circle_x29_eb_top">
+
+    <ImageView
+        android:layout_width="@dimen/x98"
+        android:layout_height="@dimen/x98"
+        android:layout_alignParentEnd="true"
+        android:paddingTop="@dimen/x35"
+        android:paddingRight="@dimen/x35"
+        android:src="@drawable/close_order_detail" />
+
+    <LinearLayout
+        android:id="@+id/top_unfinish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x40"
+            android:layout_marginTop="@dimen/y58"
+            android:includeFontPadding="false"
+            android:text="买家要求14日09:30完成配送"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textSize40" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x40"
+            android:layout_marginTop="@dimen/x29"
+            android:includeFontPadding="false"
+            android:text="剩余45分钟"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textSize52"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y58"
+        android:orientation="vertical">
+
+        <com.nopossiblebus.customview.StarBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            ratingbar:starCount="5"
+            ratingbar:starDistance="@dimen/x43"
+            ratingbar:starEmpty="@mipmap/star_empty"
+            ratingbar:starFill="@mipmap/star_full"
+            ratingbar:starSize="@dimen/x32" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="@dimen/x30"
+            android:layout_marginBottom="@dimen/x51"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收起评价详情"
+                android:textColor="@color/text_black_0f" />
+
+            <ImageView
+                android:layout_width="@dimen/x23"
+                android:layout_height="@dimen/x23"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/x17"
+                android:src="@drawable/expand" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rect_circle_x14_white"
+            android:layout_marginLeft="@dimen/x40"
+            android:layout_marginRight="@dimen/x40"
+            android:layout_marginBottom="@dimen/y58"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/x42"
+                android:layout_marginLeft="@dimen/x35"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize35"
+                    android:textColor="@color/text_black_66"
+                    android:text="商品评分"/>
+                <com.nopossiblebus.customview.StarBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x58"
+                    ratingbar:starCount="5"
+                    ratingbar:starDistance="@dimen/x43"
+                    ratingbar:starEmpty="@mipmap/star_empty"
+                    ratingbar:starFill="@mipmap/star_full"
+                    ratingbar:starSize="@dimen/x32"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/x42"
+                android:layout_marginLeft="@dimen/x31"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize35"
+                    android:textColor="@color/text_black_66"
+                    android:text="服务评分"/>
+                <com.nopossiblebus.customview.StarBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x58"
+                    ratingbar:starCount="5"
+                    ratingbar:starDistance="@dimen/x43"
+                    ratingbar:starEmpty="@mipmap/star_empty"
+                    ratingbar:starFill="@mipmap/star_full"
+                    ratingbar:starSize="@dimen/x32"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/x42"
+                android:layout_marginLeft="@dimen/x31"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize35"
+                    android:textColor="@color/text_black_66"
+                    android:text="评价内容"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/x90"
+                    android:layout_marginLeft="@dimen/x58"
+                    android:textSize="@dimen/textSize35"
+                    android:hint="请输入评价内容"
+                    android:layout_marginRight="@dimen/x36"
+                    android:background="@null"
+                    android:gravity="left|center_vertical"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x228"
+                android:layout_marginRight="@dimen/x40"
+                android:layout_marginTop="@dimen/x30"
+                android:layout_marginBottom="@dimen/x45"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:layout_width="@dimen/x127"
+                    android:layout_height="@dimen/y46"
+                    android:button="@null"
+                    android:textColor="@color/selector_text_checkbox"
+                    android:gravity="center"
+                    android:background="@drawable/selector_checkbox"
+                    android:textSize="@dimen/x29"
+                    android:text="服务好"
+                    android:includeFontPadding="false"
+
+                    />
+                <CheckBox
+                    android:layout_width="@dimen/x127"
+                    android:layout_height="@dimen/y46"
+                    android:button="@null"
+                    android:textColor="@color/selector_text_checkbox"
+                    android:gravity="center"
+                    android:layout_marginLeft="@dimen/x17"
+                    android:background="@drawable/selector_checkbox"
+                    android:textSize="@dimen/x29"
+                    android:text="质量好"
+                    android:includeFontPadding="false"
+
+                    />
+                <CheckBox
+                    android:layout_width="@dimen/x127"
+                    android:layout_height="@dimen/y46"
+                    android:button="@null"
+                    android:textColor="@color/selector_text_checkbox"
+                    android:layout_marginLeft="@dimen/x17"
+                    android:gravity="center"
+                    android:background="@drawable/selector_checkbox"
+                    android:textSize="@dimen/x29"
+                    android:text="送货快"
+                    android:includeFontPadding="false"
+
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>
