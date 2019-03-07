@@ -9,6 +9,8 @@ import android.support.v4.app.Fragment;
 import android.view.WindowManager;
 
 import com.nopossiblebus.R;
+import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
+import com.ygs.rxretrofitlibrary.retrofit_rx.http.HttpManager;
 
 import java.lang.reflect.ParameterizedType;
 
@@ -23,6 +25,7 @@ public abstract class MVPBaseFragment<V extends BaseView,T extends BasePresenter
      * 简单的退出和跳转动画
      */
     private boolean animCon = true;
+    private HttpManager manager = HttpManager.getInstance();
 
     public void setAnimCon(boolean animCon) {
         this.animCon = animCon;
@@ -45,6 +48,16 @@ public abstract class MVPBaseFragment<V extends BaseView,T extends BasePresenter
         super.startActivity(intent);
     }
 
+
+    @Override
+    public HttpManager getManager() {
+        return manager;
+    }
+
+    @Override
+    public RxAppCompatActivity getThis() {
+        return (RxAppCompatActivity) getActivity();
+    }
 
     @Override
     public void startActivityForResult(Intent intent, int requestCode) {
