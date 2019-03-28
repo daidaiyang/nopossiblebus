@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/background"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/supplygood_nopower"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="@dimen/x317"
+            android:layout_height="@dimen/y274"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/y230"
+            android:src="@drawable/togood_empty"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textSize35"
+            android:textColor="@color/text_black_99"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/x40"
+            android:includeFontPadding="false"
+            android:text="您还未获得供应商品的授权，请先申请授权"/>
+
+        <TextView
+            android:id="@+id/supplygood_apply"
+            android:layout_width="@dimen/x403"
+            android:layout_height="@dimen/y104"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/rect_circle_x52_0f"
+            android:layout_marginTop="@dimen/y110"
+            android:text="申请购货授权"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/supplygood_getpower"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y350"
+            android:background="@drawable/analysis_background">
+
+            <TextView
+                android:id="@+id/supplygood_nownum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textSize52"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:includeFontPadding="false"
+                android:layout_marginLeft="@dimen/x50"
+                android:layout_marginTop="@dimen/x50"
+                android:text="865"/>
+
+            <TextView
+                android:id="@+id/supplygood_todaymoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y197"
+                android:layout_marginLeft="@dimen/x50"
+                android:includeFontPadding="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize52"
+                android:textStyle="bold"
+                android:text="￥8655.41"/>
+            <TextView
+                android:id="@+id/supplygood_allmoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y197"
+                android:layout_marginLeft="@dimen/x510"
+                android:includeFontPadding="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize52"
+                android:textStyle="bold"
+                android:text="8655"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y118"
+                android:layout_marginLeft="@dimen/x50"
+                android:includeFontPadding="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize35"
+                android:text="现有供应商品量"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y265"
+                android:layout_marginLeft="@dimen/x50"
+                android:includeFontPadding="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize35"
+                android:text="今日供货流水"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y265"
+                android:layout_marginLeft="@dimen/x510"
+                android:includeFontPadding="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize35"
+                android:text="累计供货流水"/>
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y127"
+            android:background="@color/white"
+            android:orientation="horizontal">
+            <View
+                android:layout_width="@dimen/x6"
+                android:layout_height="@dimen/y35"
+                android:background="@color/text_black_0f"
+                android:layout_marginLeft="@dimen/x40"
+                android:layout_gravity="center_vertical"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textSize46"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/x20"
+                android:text="现有供应商品"/>
+
+        </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/supplygood_recy"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/item_rootview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x15"
+        android:layout_marginRight="@dimen/x15"
+        android:background="@drawable/rect_circle_x14_white"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/x35"
+        android:layout_marginRight="@dimen/x35"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/item_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textSize46"
+            android:textColor="@color/text_black_0f"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/x46"
+            android:text="申请中"/>
+        <TextView
+            android:id="@+id/item_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textSize35"
+            android:textColor="@color/text_black_33"
+            android:textStyle="bold"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/x46"
+            android:layout_marginLeft="@dimen/x35"
+            android:text="共7个商品"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/x35"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/item_img1"
+            android:layout_width="@dimen/x184"
+            android:layout_height="@dimen/y184"
+            android:layout_marginRight="@dimen/x17"
+            android:src="@color/colorPrimary"/>
+        <ImageView
+            android:id="@+id/item_img2"
+            android:layout_width="@dimen/x184"
+            android:layout_height="@dimen/y184"
+            android:layout_marginRight="@dimen/x17"
+            android:src="@color/colorPrimary"/>
+        <ImageView
+            android:id="@+id/item_img3"
+            android:layout_width="@dimen/x184"
+            android:layout_height="@dimen/y184"
+            android:layout_marginRight="@dimen/x17"
+            android:src="@color/colorPrimary"/>
+        <ImageView
+            android:id="@+id/item_img4"
+            android:layout_width="@dimen/x184"
+            android:layout_height="@dimen/y184"
+            android:layout_marginRight="@dimen/x17"
+            android:src="@color/colorPrimary"/>
+    </LinearLayout>
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x3"
+        android:background="@color/text_black_f2"/>
+
+    <TextView
+        android:id="@+id/item_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textSize35"
+        android:layout_marginLeft="@dimen/x35"
+        android:layout_marginTop="@dimen/x43"
+        android:layout_marginBottom="@dimen/x45"
+        android:includeFontPadding="false"
+        android:text="2019.01.14 12:34:11"/>
+    </LinearLayout>
+
+</LinearLayout>

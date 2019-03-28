@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/x40"
+        android:layout_marginRight="@dimen/x40"
+        android:layout_height="@dimen/y107">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textSize40"
+            android:textColor="@color/black"
+            android:layout_centerVertical="true"
+            android:text="粮油"
+            />
+        <TextView
+            android:id="@+id/analysis_ingood_shangjianum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textSize40"
+            android:textColor="@color/black"
+            android:layout_marginLeft="@dimen/x307"
+            android:layout_centerVertical="true"
+            android:text="进货商家34家"
+            />
+        <TextView
+            android:id="@+id/analysis_ingood_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textSize40"
+            android:textColor="@color/text_black_0f"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:text="345560"
+            />
+        <TextView
+            android:layout_toLeftOf="@id/analysis_ingood_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textSize40"
+            android:textColor="@color/black"
+            android:layout_centerVertical="true"
+            android:text="进货量："
+            />
+
+
+    </RelativeLayout>
+
+
+    <View
+        android:id="@+id/analysis_ingood_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x3"
+        android:background="@color/text_black_f2"
+        android:layout_marginLeft="@dimen/x40"
+        android:layout_marginRight="@dimen/x40"/>
+
+</LinearLayout>

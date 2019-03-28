@@ -47,6 +47,14 @@ public class IdentifyActivity extends MVPBaseActivity<IdentifyContract.View, Ide
     EditText merchname;
     @BindView(R.id.identify_commit)
     TextView commit;
+    @BindView(R.id.identify_upidcard_zheng_rl)
+    RelativeLayout identifyUpidcardZhengRl;
+    @BindView(R.id.identify_upidcard_img)
+    ImageView identifyUpidcardImg;
+    @BindView(R.id.identify_upidcard_fan_rl)
+    RelativeLayout identifyUpidcardFanRl;
+    @BindView(R.id.identify_idcard_fan_img)
+    ImageView identifyIdcardFanImg;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -61,7 +69,10 @@ public class IdentifyActivity extends MVPBaseActivity<IdentifyContract.View, Ide
         titleBack.setVisibility(View.GONE);
     }
 
-    @OnClick({R.id.identify_cancle, R.id.identify_upyingye_rl, R.id.identify_upyingye_img, R.id.identify_ypfood_rl, R.id.identify_ypfood_img, R.id.identify_commit})
+    @OnClick({R.id.identify_cancle, R.id.identify_upyingye_rl, R.id.identify_upyingye_img,
+            R.id.identify_ypfood_rl, R.id.identify_ypfood_img, R.id.identify_commit,
+            R.id.identify_upidcard_zheng_rl, R.id.identify_upidcard_img,
+            R.id.identify_upidcard_fan_rl, R.id.identify_idcard_fan_img})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.identify_cancle:
@@ -73,6 +84,14 @@ public class IdentifyActivity extends MVPBaseActivity<IdentifyContract.View, Ide
             case R.id.identify_ypfood_rl:
                 break;
             case R.id.identify_ypfood_img:
+                break;
+            case R.id.identify_upidcard_zheng_rl:
+                break;
+            case R.id.identify_upidcard_img:
+                break;
+            case R.id.identify_upidcard_fan_rl:
+                break;
+            case R.id.identify_idcard_fan_img:
                 break;
             case R.id.identify_commit:
                 break;

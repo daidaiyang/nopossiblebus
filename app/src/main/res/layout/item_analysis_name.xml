@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/rect_circle_x14_0f_kuang"
+    android:layout_marginRight="@dimen/x40"
+    android:layout_marginTop="@dimen/x40"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/analysis_name_num"
+        android:layout_width="@dimen/x46"
+        android:layout_height="@dimen/y115"
+        android:background="@drawable/rect_circle_x14_0f_left"
+        android:textColor="@color/white"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/x13"
+        android:textSize="@dimen/textSize35"
+        android:text="1"
+        />
+    <TextView
+        android:id="@+id/analysis_name_title"
+        android:layout_width="@dimen/x259"
+        android:layout_marginLeft="@dimen/x46"
+        android:layout_height="@dimen/y115"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSize40"
+        android:text="九三基础"/>
+
+
+</FrameLayout>

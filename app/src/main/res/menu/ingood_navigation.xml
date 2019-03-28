@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_supplygood"
+        android:icon="@drawable/selector_drawable_goods"
+        android:enabled="true"
+        android:title="供应商品" />
+
+    <item
+        android:id="@+id/navigation_applygood"
+        android:icon="@drawable/selector_apply"
+        android:enabled="true"
+        android:title="供货申请" />
+
+    <item
+        android:id="@+id/navigation_supplyorder"
+        android:icon="@drawable/selector_ingood"
+        android:enabled="true"
+        android:title="供货订单" />
+    <item
+        android:id="@+id/navigation_anaylsis2"
+        android:icon="@drawable/selector_analysis"
+        android:enabled="true"
+        android:title="供货分析" />
+
+</menu>

@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.nopossiblebus.R;
+import com.nopossiblebus.activies.main.MainActivity;
 import com.nopossiblebus.activies.main.ingood.analysis.AnalysisFragment;
 import com.nopossiblebus.activies.main.ingood.cart.CartFragment;
 import com.nopossiblebus.activies.main.ingood.goods.GoodsFragment;
@@ -84,15 +85,19 @@ public class IngoodFragment extends MVPBaseFragment<IngoodContract.View, IngoodP
             switch (item.getItemId()) {
                 case R.id.navigation_goods:
                     replaceFragment(0);
+                    ((MainActivity)getActivity()).showTitle();
                     return true;
                 case R.id.navigation_cart:
                     replaceFragment(1);
+                    ((MainActivity)getActivity()).showTitle();
                     return true;
                 case R.id.navigation_order:
                     replaceFragment(2);
+                    ((MainActivity)getActivity()).showTitle();
                     return true;
                 case R.id.navigation_anaylsis:
                     replaceFragment(3);
+                    ((MainActivity)getActivity()).hideTitle();
                     return true;
             }
             return false;

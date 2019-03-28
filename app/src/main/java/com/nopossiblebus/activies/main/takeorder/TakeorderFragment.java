@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.nopossiblebus.R;
 import com.nopossiblebus.adapter.TakeOrderItemAdapter;
+import com.nopossiblebus.dialog.IdentifyDialog;
 import com.nopossiblebus.dialog.TakeOrderDetailDialog;
 import com.nopossiblebus.mvp.MVPBaseFragment;
 import com.nopossiblebus.utils.RecycleViewDivider;
@@ -62,6 +63,8 @@ public class TakeorderFragment extends MVPBaseFragment<TakeorderContract.View, T
     private List<String> mData;
     private TakeOrderDetailDialog dialog;
 
+    private IdentifyDialog identifyDialog = null;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -72,6 +75,7 @@ public class TakeorderFragment extends MVPBaseFragment<TakeorderContract.View, T
     }
 
     private void initView() {
+        identifyDialog = new IdentifyDialog(getContext());
         mData = new ArrayList<>();
         mData.add("");
         mData.add("");
@@ -119,5 +123,9 @@ public class TakeorderFragment extends MVPBaseFragment<TakeorderContract.View, T
     @Override
     public void onTakeClick(View v, int position) {
         Log.d("ssssssssssssssssssss","taketaketaketaketaketake");
+        if (identifyDialog == null){
+            identifyDialog = new IdentifyDialog(getContext());
+        }
+        identifyDialog.show();
     }
 }

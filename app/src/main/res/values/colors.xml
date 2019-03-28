@@ -10,6 +10,7 @@
     <color name="black">#000</color>
     <color name="record_color">#FEEE94</color>
     <color name="background_color">#FFFFFCEB</color>
+    <color name ="transparent">#00ffffff</color>
 
     <color name="background">#FFFCEB</color>
 
@@ -31,4 +32,5 @@
     <color name="text_black_1b">#E61B1B</color>
     <color name="text_price">#FF0000</color>
     <color name="text_price2">#EC0000</color>
+    <color name="line_cc">#cccccc</color>
 </resources>

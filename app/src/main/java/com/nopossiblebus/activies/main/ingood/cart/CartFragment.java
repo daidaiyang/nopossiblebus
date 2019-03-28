@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.nopossiblebus.R;
 import com.nopossiblebus.activies.confirorder.ConfirorderActivity;
+import com.nopossiblebus.activies.gooddetail.GooddetailActivity;
 import com.nopossiblebus.activies.identify.IdentifyActivity;
 import com.nopossiblebus.adapter.IngoodcartItemAdapter;
 import com.nopossiblebus.mvp.MVPBaseFragment;
@@ -89,9 +90,35 @@ public class CartFragment extends MVPBaseFragment<CartContract.View, CartPresent
         mData.add("");
         mData.add("");
         mAdapter = new IngoodcartItemAdapter(getContext(),mData);
+        mAdapter.setClickListener(clickListener);
         ingoodCartBgaRecy.setAdapter(mAdapter);
 
     }
+
+
+    private IngoodcartItemAdapter.OnItemClickListener clickListener = new IngoodcartItemAdapter.OnItemClickListener() {
+        @Override
+        public void onCheckedClick(View v, int position, boolean isChecked) {
+
+        }
+
+        @Override
+        public void onSubClick(View v, int position) {
+
+        }
+
+        @Override
+        public void onPlusClick(View v, int position) {
+
+        }
+
+        @Override
+        public void onItemClick(View v, int position) {
+            Intent intent = new Intent(getContext(),GooddetailActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
+    };
 
     @Override
     public void onDestroyView() {

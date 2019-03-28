@@ -15,6 +15,7 @@ import android.widget.RadioGroup;
 
 import com.nopossiblebus.R;
 import com.nopossiblebus.adapter.IngoodorderItemAdapter;
+import com.nopossiblebus.dialog.TakeOrderDetailDialog;
 import com.nopossiblebus.mvp.MVPBaseFragment;
 import com.nopossiblebus.utils.RecycleViewDivider;
 
@@ -26,6 +27,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import cn.bingoogolapple.refreshlayout.BGANormalRefreshViewHolder;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
+import retrofit2.http.GET;
 
 /**
  * MVPPlugin
@@ -53,6 +55,7 @@ public class OrderFragment extends MVPBaseFragment<OrderContract.View, OrderPres
 
     private List<String> mData;
     private IngoodorderItemAdapter mAdapter;
+    private TakeOrderDetailDialog dialog;
 
     @Nullable
     @Override
@@ -70,6 +73,7 @@ public class OrderFragment extends MVPBaseFragment<OrderContract.View, OrderPres
         mData.add("");
         mData.add("");
         ingoodOrderRga.setDelegate(this);
+        dialog = new TakeOrderDetailDialog(getContext());
         BGANormalRefreshViewHolder holder = new BGANormalRefreshViewHolder(getContext(),true);
         holder.setLoadingMoreText("正在加载中");
         ingoodOrderRga.setRefreshViewHolder(holder);
@@ -80,9 +84,26 @@ public class OrderFragment extends MVPBaseFragment<OrderContract.View, OrderPres
                 (int) getContext().getResources().getDimension(R.dimen.x20),
                 getContext().getResources().getColor(R.color.background)));
         mAdapter = new IngoodorderItemAdapter(getContext(),mData);
+        mAdapter.setClickListener(clickListener);
         ingoodOrderRgaRecy.setAdapter(mAdapter);
     }
 
+
+
+    private IngoodorderItemAdapter.OnItemClickListener clickListener = new IngoodorderItemAdapter.OnItemClickListener() {
+        @Override
+        public void onItemClick(View v, int position) {
+            if (dialog == null){
+                dialog = new TakeOrderDetailDialog(getContext());
+            }
+            dialog.show();
+        }
+
+        @Override
+        public void onOperationClick(View v, int position) {
+
+        }
+    };
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -96,7 +117,6 @@ public class OrderFragment extends MVPBaseFragment<OrderContract.View, OrderPres
 
     @Override
     public boolean onBGARefreshLayoutBeginLoadingMore(BGARefreshLayout refreshLayout) {
-        Log.d("sssssssssssssssss","sssssssssssssssssssssssssss");
         return false;
     }
 }

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/y347"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/x35"
+        android:layout_marginRight="@dimen/x35"
+        android:layout_weight="1">
+
+        <FrameLayout
+            android:layout_width="@dimen/x184"
+            android:layout_height="@dimen/y184"
+            android:layout_marginTop="@dimen/x58"
+            >
+
+            <ImageView
+                android:id="@+id/rightitem_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@color/colorPrimary" />
+
+            <CheckBox
+                android:id="@+id/rightitem_selected"
+                android:layout_width="@dimen/x52"
+                android:layout_height="@dimen/x52"
+                android:layout_gravity="bottom"
+                android:layout_margin="@dimen/x1"
+                android:background="@drawable/selector_checkbox_circle_none"
+                android:button="@null"
+                android:checked="true" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/rightitem_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x255"
+            android:layout_marginTop="@dimen/x73"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="2"
+            android:text="克莉娜橄榄油3L家庭装炒菜食用油西班牙原油进口克莉娜橄榄油3L家庭装炒菜食用油西班牙原油进口"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/textSize35" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/x31">
+
+            <LinearLayout
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize35"
+                    android:textColor="@color/black"
+                    android:text="销："/>
+                <TextView
+                    android:id="@+id/rightitem_xiao_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize35"
+                    android:textColor="@color/black"
+                    android:text="￥28.00"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x289"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize35"
+                    android:textColor="@color/black"
+                    android:text="进："/>
+                <TextView
+                    android:id="@+id/rightitem_jin_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize35"
+                    android:textColor="@color/text_price"
+                    android:text="￥28.00"/>
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="@dimen/x226"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="@dimen/x40"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/rightitem_sub"
+                    android:layout_width="@dimen/x63"
+                    android:layout_height="@dimen/x63"
+                    android:src="@drawable/sub" />
+
+                <TextView
+                    android:id="@+id/rightitem_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="3"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/textSize46" />
+
+                <ImageView
+                    android:id="@+id/rightitem_plus"
+                    android:layout_width="@dimen/x63"
+                    android:layout_height="@dimen/x63"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/plus" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x2"
+        android:layout_marginLeft="@dimen/x23"
+        android:layout_marginRight="@dimen/x23"
+        android:background="@color/text_black_dd" />
+
+
+</LinearLayout>

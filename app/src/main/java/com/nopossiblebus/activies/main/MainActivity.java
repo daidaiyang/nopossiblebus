@@ -9,6 +9,7 @@ import android.text.TextPaint;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -25,11 +26,10 @@ import butterknife.OnClick;
 
 /**
  * MVPPlugin
- *  邮箱 784787081@qq.com
+ * 邮箱 784787081@qq.com
  */
 
 public class MainActivity extends MVPBaseActivity<MainContract.View, MainPresenter> implements MainContract.View {
-
 
 
     @BindView(R.id.main_frame)
@@ -56,8 +56,10 @@ public class MainActivity extends MVPBaseActivity<MainContract.View, MainPresent
     RelativeLayout mainTogood;
     @BindView(R.id.main_message)
     FrameLayout mainMessage;
+    @BindView(R.id.main_takeorder_titlell)
+    LinearLayout mainTakeorderTitlell;
     private FragmentManager fragmentManager = getSupportFragmentManager();
-    private FragmentTransaction transaction ;
+    private FragmentTransaction transaction;
 
     private TakeorderFragment takeorderFragment;
     private IngoodFragment ingoodFragment;
@@ -78,6 +80,14 @@ public class MainActivity extends MVPBaseActivity<MainContract.View, MainPresent
         }
         transaction.add(R.id.main_frame, ingoodFragment);
         transaction.commit();
+    }
+
+
+    public void hideTitle(){
+        mainTakeorderTitlell.setVisibility(View.GONE);
+    }
+    public void showTitle(){
+        mainTakeorderTitlell.setVisibility(View.VISIBLE);
     }
 
     @OnClick({R.id.main_mine, R.id.main_takeorder, R.id.main_ingood, R.id.main_togood, R.id.main_message})
@@ -102,9 +112,9 @@ public class MainActivity extends MVPBaseActivity<MainContract.View, MainPresent
         }
     }
 
-    private void changeLine(int position){
+    private void changeLine(int position) {
         hideAllLine();
-        switch (position){
+        switch (position) {
             case 0:
                 mainTakeorderLine.setVisibility(View.VISIBLE);
                 TextPaint paint0 = mainTakeorderCheck.getPaint();
@@ -126,33 +136,33 @@ public class MainActivity extends MVPBaseActivity<MainContract.View, MainPresent
     }
 
 
-    private void replaceFragment(int position){
+    private void replaceFragment(int position) {
         transaction = fragmentManager.beginTransaction();
         hideAllFragment();
-        switch (position){
+        switch (position) {
             case 0:
-                if (takeorderFragment == null){
+                if (takeorderFragment == null) {
                     takeorderFragment = new TakeorderFragment();
                     transaction.add(R.id.main_frame, takeorderFragment);
-                }else {
+                } else {
                     transaction.show(takeorderFragment);
                 }
                 transaction.commit();
                 break;
             case 1:
-                if (ingoodFragment == null){
+                if (ingoodFragment == null) {
                     ingoodFragment = new IngoodFragment();
                     transaction.add(R.id.main_frame, ingoodFragment);
-                }else {
+                } else {
                     transaction.show(ingoodFragment);
                 }
                 transaction.commit();
                 break;
             case 2:
-                if (togoodFragment == null){
+                if (togoodFragment == null) {
                     togoodFragment = new TogoodFragment();
                     transaction.add(R.id.main_frame, togoodFragment);
-                }else {
+                } else {
                     transaction.show(togoodFragment);
                 }
                 transaction.commit();
@@ -160,19 +170,19 @@ public class MainActivity extends MVPBaseActivity<MainContract.View, MainPresent
         }
     }
 
-    private void hideAllFragment(){
-        if (takeorderFragment !=null){
+    private void hideAllFragment() {
+        if (takeorderFragment != null) {
             transaction.hide(takeorderFragment);
         }
-        if (ingoodFragment !=null){
+        if (ingoodFragment != null) {
             transaction.hide(ingoodFragment);
         }
-        if (togoodFragment !=null){
+        if (togoodFragment != null) {
             transaction.hide(togoodFragment);
         }
     }
 
-    private void hideAllLine(){
+    private void hideAllLine() {
         TextPaint paint0 = mainTakeorderCheck.getPaint();
         paint0.setFakeBoldText(false);
         TextPaint paint1 = mainIngoodCheck.getPaint();

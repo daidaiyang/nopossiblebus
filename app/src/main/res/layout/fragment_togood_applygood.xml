@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+    
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/include_title"/>
+        <TextView
+            android:id="@+id/applygood_write"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="@dimen/x43"
+            android:textSize="@dimen/textSize52"
+            android:textColor="@color/black"
+            android:text="填写申请"/>
+    </FrameLayout>
+
+    <include
+        android:visibility="gone"
+        layout="@layout/include_empty2"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y127"
+        android:orientation="horizontal">
+        <RadioGroup
+            android:id="@+id/ingood_order_rg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/togood_rb_all"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:text="全部"
+                android:paddingLeft="@dimen/x58"
+                android:paddingRight="@dimen/x45"
+                android:gravity="center"
+                android:textColor="@color/selector_text_ingoodorder"
+                android:textStyle=""
+                android:checked="true"
+                />
+            <View
+                android:layout_width="@dimen/x3"
+                android:layout_height="@dimen/x29"
+                android:layout_gravity="center"
+                android:background="@color/text_black_66"/>
+            <RadioButton
+                android:id="@+id/togood_rb_passing"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:text="申请中"
+                android:paddingLeft="@dimen/x45"
+                android:paddingRight="@dimen/x45"
+                android:gravity="center"
+                android:textColor="@color/selector_text_ingoodorder"
+                />
+            <View
+                android:layout_width="@dimen/x3"
+                android:layout_height="@dimen/x29"
+                android:layout_gravity="center"
+                android:background="@color/text_black_66"/>
+            <RadioButton
+                android:id="@+id/togood_rb_pass"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:text="已通过"
+                android:paddingLeft="@dimen/x45"
+                android:paddingRight="@dimen/x45"
+                android:gravity="center"
+                android:textColor="@color/selector_text_ingoodorder"
+                />
+            <View
+                android:layout_width="@dimen/x3"
+                android:layout_height="@dimen/x29"
+                android:layout_gravity="center"
+                android:background="@color/text_black_66"/>
+            <RadioButton
+                android:id="@+id/togood_rb_unpass"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:text="未通过"
+                android:paddingLeft="@dimen/x45"
+                android:paddingRight="@dimen/x45"
+                android:gravity="center"
+                android:textColor="@color/selector_text_ingoodorder"
+                />
+        </RadioGroup>
+    </LinearLayout>
+    <cn.bingoogolapple.refreshlayout.BGARefreshLayout
+        android:id="@+id/togood_applygood_bga"
+        android:layout_width="match_parent"
+        android:background="@color/background"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/togood_applygood_recy"
+            android:layout_marginTop="@dimen/x20"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background"/>
+    </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
+
+</LinearLayout>

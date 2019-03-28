@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:id="@+id/leftitem_root"
+    android:background="@color/background"
+    android:layout_height="@dimen/y96">
+    
+    <View
+        android:id="@+id/leftitem_leftLine"
+        android:layout_width="@dimen/x10"
+        android:layout_height="match_parent"
+        android:background="@color/text_black_0f"/>
+
+    <TextView
+        android:id="@+id/leftitem_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textSize37"
+        android:layout_marginLeft="@dimen/x52"
+        android:layout_gravity="center"
+        android:textColor="@color/text_black_33"
+        android:text="粮油"/>
+
+
+
+</LinearLayout>

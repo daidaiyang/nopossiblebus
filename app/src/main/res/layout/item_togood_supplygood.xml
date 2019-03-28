@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/x40"
+        android:layout_marginRight="@dimen/x40"
+        android:layout_height="@dimen/y256">
+
+        <ImageView
+            android:id="@+id/item_img"
+            android:layout_width="@dimen/x184"
+            android:layout_height="@dimen/y184"
+            android:layout_centerVertical="true"
+            android:src="@color/colorPrimary"/>
+
+        <TextView
+            android:id="@+id/item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textSize="@dimen/textSize35"
+            android:textColor="@color/black"
+            android:layout_marginLeft="@dimen/x220"
+            android:layout_marginTop="@dimen/x49"
+            android:includeFontPadding="false"
+            android:text="克莉娜橄榄油3L家庭装炒菜食用油西班牙原油进口油西班牙原油进口"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x220"
+            android:layout_marginTop="@dimen/y165">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize35"
+                    android:textColor="@color/text_black_66"
+                    android:includeFontPadding="false"
+                    android:text="已供"/>
+                <TextView
+                    android:id="@+id/item_already_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize35"
+                    android:textColor="@color/text_black_0f"
+                    android:includeFontPadding="false"
+                    android:text="3452"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize35"
+                    android:textColor="@color/text_black_66"
+                    android:includeFontPadding="false"
+                    android:text="进货价："/>
+                <TextView
+                    android:id="@+id/item_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize35"
+                    android:textColor="@color/text_black_0f"
+                    android:includeFontPadding="false"
+                    android:text="￥25.60"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <View
+        android:id="@+id/item_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x3"
+        android:background="@color/text_black_f2"/>
+
+</LinearLayout>

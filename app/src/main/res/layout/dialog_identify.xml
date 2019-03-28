@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/x850"
+    android:orientation="vertical"
+    android:background="@drawable/rect_circle_x29_white"
+    android:layout_height="wrap_content">
+    
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y317"
+        android:src="@drawable/identify_back"
+        android:scaleType="fitXY"/>
+    <RelativeLayout
+        android:layout_width="@dimen/x630"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/y100"
+        android:layout_height="wrap_content">
+        <View
+            android:layout_width="@dimen/x590"
+            android:layout_height="@dimen/y2"
+            android:layout_marginLeft="@dimen/x14"
+            android:layout_marginTop="@dimen/y15"
+            android:background="@color/line_cc"/>
+        <View
+            android:id="@+id/dialog_tijiao_cir"
+            android:layout_width="@dimen/x29"
+            android:layout_height="@dimen/y29"
+            android:background="@drawable/circle_point_x29"/>
+        <View
+            android:id="@+id/dialog_shenhe_cir"
+            android:layout_width="@dimen/x29"
+            android:layout_height="@dimen/y29"
+            android:layout_marginLeft="@dimen/x266"
+            android:background="@drawable/circle_point_x29_cc"/>
+        <View
+            android:id="@+id/dialog_result_cir"
+            android:layout_width="@dimen/x29"
+            android:layout_height="@dimen/y29"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/circle_point_x29_cc"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x30"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/dialog_tijiao_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x40"
+            android:textColor="@color/text_black_0f"
+            android:textSize="@dimen/textSize29"
+            android:text="提交认证资料"/>
+        <TextView
+            android:id="@+id/dialog_shenhe_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x130"
+            android:textColor="@color/text_black_cc"
+            android:textSize="@dimen/textSize29"
+            android:text="资料审核"/>
+        <TextView
+            android:id="@+id/dialog_result_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x210"
+            android:textColor="@color/text_black_cc"
+            android:textSize="@dimen/textSize29"
+            android:text="审核结果"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dialog_tijiao"
+        android:layout_width="@dimen/x562"
+        android:layout_height="@dimen/y104"
+        android:text="提交资料"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/x85"
+        android:layout_marginBottom="@dimen/x85"
+        android:background="@drawable/rect_circle_x52_0f"/>
+
+
+
+
+
+</LinearLayout>
