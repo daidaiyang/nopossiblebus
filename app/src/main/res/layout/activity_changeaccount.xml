@@ -1,6 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+    <include layout="@layout/include_title"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/background">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x58"
+                android:layout_marginLeft="@dimen/x43"
+                android:textSize="@dimen/textSize35"
+                android:textColor="@color/black"
+                android:text="更换手机号后，下次登陆可使用新手机号登录"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/y40">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/textSize35"
+                    android:textColor="@color/black"
+                    android:includeFontPadding="false"
+                    android:layout_marginLeft="@dimen/x43"
+                    android:text="当前手机号："/>
+                <TextView
+                    android:id="@+id/changeaccount_tel_cur"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/textSize63"
+                    android:textColor="@color/black"
+                    android:includeFontPadding="false"
+                    android:textStyle="bold"
+                    android:text="18888888888"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y80"
+                android:textSize="@dimen/textSize35"
+                android:textColor="@color/text_black"
+                android:layout_marginLeft="@dimen/x43"
+                android:text="原手机短信验证码"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y121"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/y25"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/changeaccount_code"
+                    android:layout_width="@dimen/x691"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/x43"
+                    android:hint="请输入验证码"
+                    android:textSize="@dimen/textSize40"
+                    android:textColorHint="@color/text_black_99"
+                    android:paddingLeft="@dimen/x23"
+                    android:textColor="@color/text_black"
+                    android:gravity="center_vertical|left"
+                    android:background="@drawable/rect_circle_x12_cc_kuang"/>
+
+                <TextView
+                    android:id="@+id/changeaccount_getcode"
+                    android:layout_width="@dimen/x288"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rect_circle_x14_0f"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textSize40"
+                    android:layout_marginLeft="@dimen/x14"
+                    android:text="获取验证码"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y58"
+                android:textSize="@dimen/textSize35"
+                android:textColor="@color/black"
+                android:layout_marginLeft="@dimen/x43"
+                android:text="新手机号"/>
+            <EditText
+                android:id="@+id/changeaccount_newtel"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y115"
+                android:background="@drawable/rect_circle_x12_cc_kuang"
+                android:layout_marginLeft="@dimen/x43"
+                android:layout_marginRight="@dimen/x43"
+                android:layout_marginTop="@dimen/x30"
+                android:textColorHint="@color/text_black_99"
+                android:textSize="@dimen/textSize40"
+                android:paddingLeft="@dimen/x23"
+                android:gravity="center_vertical|left"
+                android:hint="请输入新的手机号码"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y58"
+                android:textSize="@dimen/textSize35"
+                android:textColor="@color/black"
+                android:layout_marginLeft="@dimen/x43"
+                android:text="新账号密码(密码需6位数字以上，包含字母和数字)"/>
+            <EditText
+                android:id="@+id/changeaccount_newpass"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y115"
+                android:background="@drawable/rect_circle_x12_cc_kuang"
+                android:layout_marginLeft="@dimen/x43"
+                android:layout_marginRight="@dimen/x43"
+                android:layout_marginTop="@dimen/x30"
+                android:textColorHint="@color/text_black_99"
+                android:textSize="@dimen/textSize40"
+                android:paddingLeft="@dimen/x23"
+                android:layout_marginBottom="@dimen/x60"
+                android:gravity="center_vertical|left"
+                android:hint="请输入新账号密码"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/changeaccount_commit"
+            android:layout_width="@dimen/x749"
+            android:layout_height="@dimen/y127"
+            android:layout_marginTop="@dimen/x230"
+            android:layout_gravity="center_horizontal"
+            android:text="确定修改"
+            android:gravity="center"
+            android:textSize="@dimen/textSize46"
+            android:textColor="@color/white"
+            android:background="@drawable/rect_circle_x63_0f"/>
+    </LinearLayout>
+
+</LinearLayout>

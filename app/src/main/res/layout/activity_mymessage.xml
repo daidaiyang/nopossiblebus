@@ -1,6 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+    <include layout="@layout/include_title"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/background">
+
+        <RelativeLayout
+            android:id="@+id/message_noti"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y173"
+            android:layout_marginLeft="@dimen/x43"
+            android:layout_marginTop="@dimen/x58"
+            android:layout_marginRight="@dimen/x43"
+            android:background="@drawable/tongzhi_back">
+
+            <ImageView
+                android:layout_width="@dimen/x114"
+                android:layout_height="@dimen/y114"
+                android:src="@drawable/xitongtongzhi"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x20"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textSize46"
+                android:textColor="@color/white"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x176"
+                android:text="系统通知"/>
+
+            <TextView
+                android:id="@+id/message_noti_num"
+                android:layout_width="@dimen/x46"
+                android:layout_height="@dimen/y46"
+                android:background="@drawable/circle_point_x46_33"
+                android:gravity="center"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize35"
+                android:layout_marginRight="@dimen/x58"
+                android:text="1"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/message_newgood"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y173"
+            android:layout_marginLeft="@dimen/x43"
+            android:layout_marginTop="@dimen/x35"
+            android:layout_marginRight="@dimen/x43"
+            android:background="@drawable/xinpin_back">
+
+            <ImageView
+                android:layout_width="@dimen/x114"
+                android:layout_height="@dimen/y114"
+                android:src="@drawable/xinpin"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x20"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textSize46"
+                android:textColor="@color/white"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x176"
+                android:text="新品上架"/>
+
+            <TextView
+                android:id="@+id/message_newgood_num"
+                android:layout_width="@dimen/x46"
+                android:layout_height="@dimen/y46"
+                android:background="@drawable/circle_point_x46_33"
+                android:gravity="center"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize35"
+                android:layout_marginRight="@dimen/x58"
+                android:text="1"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/message_activity"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y173"
+            android:layout_marginLeft="@dimen/x43"
+            android:layout_marginTop="@dimen/x35"
+            android:layout_marginRight="@dimen/x43"
+            android:background="@drawable/cuxiao_back">
+
+            <ImageView
+                android:layout_width="@dimen/x114"
+                android:layout_height="@dimen/y114"
+                android:src="@drawable/cuxiao"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x20"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textSize46"
+                android:textColor="@color/white"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x176"
+                android:text="商品促销活动"/>
+
+            <TextView
+                android:id="@+id/message_activity_num"
+                android:layout_width="@dimen/x46"
+                android:layout_height="@dimen/y46"
+                android:background="@drawable/circle_point_x46_33"
+                android:gravity="center"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize35"
+                android:layout_marginRight="@dimen/x58"
+                android:text="1"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/message_tui"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y173"
+            android:layout_marginLeft="@dimen/x43"
+            android:layout_marginTop="@dimen/x58"
+            android:layout_marginRight="@dimen/x43"
+            android:background="@drawable/youzhi_back">
+
+            <ImageView
+                android:layout_width="@dimen/x114"
+                android:layout_height="@dimen/y114"
+                android:src="@drawable/youzhishangpin"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x20"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textSize46"
+                android:textColor="@color/white"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x176"
+                android:text="优质商品推荐"/>
+
+            <TextView
+                android:id="@+id/message_tui_num"
+                android:layout_width="@dimen/x46"
+                android:layout_height="@dimen/y46"
+                android:background="@drawable/circle_point_x46_33"
+                android:gravity="center"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize35"
+                android:layout_marginRight="@dimen/x58"
+                android:text="1"/>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

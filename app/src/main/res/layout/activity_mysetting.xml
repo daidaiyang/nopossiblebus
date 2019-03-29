@@ -1,6 +1,288 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+
+    <include layout="@layout/include_title"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y207">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/y40"
+                    android:layout_marginLeft="@dimen/x43"
+                    android:includeFontPadding="false"
+                    android:textSize="@dimen/textSize46"
+                    android:textColor="@color/black"
+                    android:text="抢单功能"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize35"
+                    android:textColor="@color/text_black_66"
+                    android:layout_marginLeft="@dimen/x43"
+                    android:layout_marginTop="@dimen/y124"
+                    android:includeFontPadding="false"
+                    android:text="开启抢单功能后，才能收到抢单信息"/>
+
+                <com.nopossiblebus.customview.SwitchButton
+                    android:layout_width="@dimen/x95"
+                    android:layout_height="@dimen/y58"
+                    app:sb_checked="true"
+                    app:sb_show_indicator="false"
+                    app:sb_background="@color/text_black_99"
+                    app:sb_checked_color="@color/text_black_0f"
+                    app:sb_uncheck_color="@color/text_black_99"
+                    android:layout_marginRight="@dimen/x43"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/y43"
+                    />
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x3"
+                android:layout_marginLeft="@dimen/x43"
+                android:layout_marginRight="@dimen/x43"
+                android:background="@color/text_black_f2"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y207">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/y40"
+                    android:layout_marginLeft="@dimen/x43"
+                    android:includeFontPadding="false"
+                    android:textSize="@dimen/textSize46"
+                    android:textColor="@color/black"
+                    android:text="语音报单"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize35"
+                    android:textColor="@color/text_black_66"
+                    android:layout_marginLeft="@dimen/x43"
+                    android:layout_marginTop="@dimen/y124"
+                    android:includeFontPadding="false"
+                    android:text="开启语音报单功能，新订单会有语音提醒"/>
+
+                <com.nopossiblebus.customview.SwitchButton
+                    android:layout_width="@dimen/x95"
+                    android:layout_height="@dimen/y58"
+                    app:sb_checked="true"
+                    app:sb_show_indicator="false"
+                    android:layout_marginRight="@dimen/x43"
+                    app:sb_checked_color="@color/text_black_0f"
+                    app:sb_uncheck_color="@color/text_black_99"
+                    app:sb_background="@color/text_black_99"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/y43"
+                    />
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x3"
+                android:layout_marginLeft="@dimen/x43"
+                android:layout_marginRight="@dimen/x43"
+                android:background="@color/text_black_f2"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y207">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/y40"
+                    android:layout_marginLeft="@dimen/x43"
+                    android:includeFontPadding="false"
+                    android:textSize="@dimen/textSize46"
+                    android:textColor="@color/black"
+                    android:text="是否营业"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize35"
+                    android:textColor="@color/text_black_66"
+                    android:layout_marginLeft="@dimen/x43"
+                    android:layout_marginTop="@dimen/y124"
+                    android:includeFontPadding="false"
+                    android:text="开启营业才能接收到用户订单"/>
+
+                <com.nopossiblebus.customview.SwitchButton
+                    android:layout_width="@dimen/x95"
+                    android:layout_height="@dimen/y58"
+                    app:sb_checked="true"
+                    app:sb_show_indicator="false"
+                    android:layout_marginRight="@dimen/x43"
+                    app:sb_checked_color="@color/text_black_0f"
+                    app:sb_uncheck_color="@color/text_black_99"
+                    app:sb_background="@color/text_black_99"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/y43"
+                    />
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x3"
+                android:layout_marginLeft="@dimen/x43"
+                android:layout_marginRight="@dimen/x43"
+                android:background="@color/text_black_f2"/>
+
+            <RelativeLayout
+                android:id="@+id/setting_worktime"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y207">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/y40"
+                    android:layout_marginLeft="@dimen/x43"
+                    android:includeFontPadding="false"
+                    android:textSize="@dimen/textSize46"
+                    android:textColor="@color/black"
+                    android:text="设置营业时间"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize35"
+                    android:textColor="@color/text_black_66"
+                    android:layout_marginLeft="@dimen/x43"
+                    android:layout_marginTop="@dimen/y124"
+                    android:includeFontPadding="false"
+                    android:text="超出营业时间，系统将不会为您派单，也收不到抢单信息"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize40"
+                    android:textColor="@color/black"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/y47"
+                    android:layout_marginRight="@dimen/x98"
+                    android:text="7:00-23:00"/>
+
+                <ImageView
+                    android:layout_width="@dimen/x29"
+                    android:layout_height="@dimen/y29"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/x60"
+                    android:layout_marginRight="@dimen/x58"
+                    android:src="@drawable/jiantou_address"/>
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x3"
+                android:layout_marginLeft="@dimen/x43"
+                android:layout_marginRight="@dimen/x43"
+                android:background="@color/text_black_f2"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y23"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y144">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize46"
+                    android:textColor="@color/text_black"
+                    android:layout_marginLeft="@dimen/x43"
+                    android:layout_centerVertical="true"
+                    android:text="当前版本"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize40"
+                    android:textColor="@color/text_black"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x96"
+                    android:text="已经是最新版本"
+                    />
+                <ImageView
+                    android:layout_width="@dimen/x29"
+                    android:layout_height="@dimen/y29"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x58"
+                    android:src="@drawable/jiantou_address"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y144">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize46"
+                    android:textColor="@color/text_black"
+                    android:layout_marginLeft="@dimen/x43"
+                    android:layout_centerVertical="true"
+                    android:text="清除缓存"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSize40"
+                    android:textColor="@color/text_black"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x96"
+                    android:text="34M"
+                    />
+                <ImageView
+                    android:layout_width="@dimen/x29"
+                    android:layout_height="@dimen/y29"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x58"
+                    android:src="@drawable/jiantou_address"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="@dimen/x749"
+            android:layout_height="@dimen/y127"
+            android:background="@drawable/rect_circle_x63_0f_kuang"
+            android:textColor="@color/text_black_0f"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/y86"
+            android:textSize="@dimen/textSize46"
+            android:text="退出登陆"/>
+    </LinearLayout>
+
+
+</LinearLayout>

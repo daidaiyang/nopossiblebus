@@ -1,6 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <include layout="@layout/include_title" />
+
+    <RelativeLayout
+        android:id="@+id/personal_avar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y144"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x43"
+            android:text="头像"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/textSize46" />
+
+        <ImageView
+            android:id="@+id/personal_avar_img"
+            android:layout_width="@dimen/x98"
+            android:layout_height="@dimen/y98"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x43"
+            android:src="@color/colorPrimary" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x3"
+        android:layout_marginLeft="@dimen/x43"
+        android:layout_marginRight="@dimen/x43"
+        android:background="@color/text_black_f2" />
+    <RelativeLayout
+        android:id="@+id/personal_account"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="@dimen/y144">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x43"
+            android:text="账号"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/textSize46" />
+
+        <TextView
+            android:id="@+id/personal_account_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x98"
+            android:textSize="@dimen/textSize40"
+            android:textColor="@color/text_black"
+            android:text="356465165415615"/>
+
+        <ImageView
+            android:layout_width="@dimen/x29"
+            android:layout_height="@dimen/y29"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="@dimen/x43"
+            android:src="@drawable/jiantou_you"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x3"
+        android:layout_marginLeft="@dimen/x43"
+        android:layout_marginRight="@dimen/x43"
+        android:background="@color/text_black_f2"/>
+    <RelativeLayout
+        android:id="@+id/personal_changepss"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="@dimen/y144">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x43"
+            android:text="修改密码"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/textSize46" />
+
+        <ImageView
+            android:layout_width="@dimen/x29"
+            android:layout_height="@dimen/y29"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="@dimen/x43"
+            android:src="@drawable/jiantou_you"/>
+    </RelativeLayout>
+
+</LinearLayout>
