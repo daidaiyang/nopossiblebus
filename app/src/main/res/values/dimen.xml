@@ -9,6 +9,7 @@
     <dimen name="textSize29">@dimen/x29</dimen>
     <dimen name="textSize31">@dimen/x31</dimen>
     <dimen name="textSize35">@dimen/x35</dimen>
+    <dimen name="textSize36">@dimen/x36</dimen>
     <dimen name="textSize37">@dimen/x37</dimen>
     <dimen name="textSize40">@dimen/x40</dimen>
     <dimen name="textSize42">@dimen/x42</dimen>

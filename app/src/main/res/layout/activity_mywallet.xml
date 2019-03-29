@@ -1,6 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
     android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+    <include layout="@layout/include_title"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/analysis_background"
+        android:layout_marginLeft="@dimen/x30"
+        android:layout_marginRight="@dimen/x30"
+        android:layout_height="@dimen/y432">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y62"
+            android:layout_marginLeft="@dimen/x58"
+            android:includeFontPadding="false"
+            android:textSize="@dimen/textSize36"
+            android:textColor="@color/white"
+            android:text="可提现"/>
+
+        <TextView
+            android:id="@+id/mywallet_withdrawable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x95"
+            android:textStyle="bold"
+            android:includeFontPadding="false"
+            android:layout_marginTop="@dimen/x127"
+            android:layout_marginLeft="@dimen/x58"
+            android:text="240,001.00"/>
+
+        <TextView
+            android:id="@+id/mywallet_withdrawal"
+            android:layout_width="@dimen/y144"
+            android:layout_height="@dimen/y63"
+            android:textColor="@color/text_black_0f"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/x137"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="@dimen/x58"
+            android:background="@drawable/rect_circle_x32_white"
+            android:text="提现"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y261"
+            android:layout_marginLeft="@dimen/x58"
+            android:includeFontPadding="false"
+            android:textSize="@dimen/textSize35"
+            android:textColor="@color/white"
+            android:text="余额"/>
+        <TextView
+            android:id="@+id/mywallet_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y321"
+            android:layout_marginLeft="@dimen/x58"
+            android:includeFontPadding="false"
+            android:textSize="@dimen/textSize63"
+            android:textColor="@color/white"
+            android:text="454,554"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y261"
+            android:layout_marginLeft="@dimen/x480"
+            android:includeFontPadding="false"
+            android:textSize="@dimen/textSize35"
+            android:textColor="@color/white"
+            android:text="冻结中"/>
+        <TextView
+            android:id="@+id/mywallet_frozen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y321"
+            android:layout_marginLeft="@dimen/x481"
+            android:includeFontPadding="false"
+            android:textSize="@dimen/textSize63"
+            android:textColor="@color/white"
+            android:text="454,554"/>
+    </RelativeLayout>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/x40"
+        android:layout_marginBottom="@dimen/x40"
+        android:gravity="center_vertical"
+        android:layout_height="@dimen/y111">
+
+        <RadioButton
+            android:id="@+id/mywallet_all"
+            android:layout_width="@dimen/x219"
+            android:layout_height="@dimen/x75"
+            android:button="@null"
+            android:textSize="@dimen/textSize40"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/x40"
+            android:layout_marginLeft="@dimen/x40"
+            android:textColor="@color/selector_text_00ff"
+            android:background="@drawable/selector_radiobutton_shadow"
+            android:checked="true"
+            android:text="全部"/>
+        <RadioButton
+            android:id="@+id/mywallet_income"
+            android:layout_width="@dimen/x219"
+            android:layout_height="@dimen/y75"
+            android:button="@null"
+            android:textSize="@dimen/textSize40"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/x35"
+            android:textColor="@color/selector_text_00ff"
+            android:background="@drawable/selector_radiobutton_shadow"
+            android:text="交易收入+"/>
+        <RadioButton
+            android:id="@+id/mywallet_expenditure"
+            android:layout_width="@dimen/x259"
+            android:layout_height="@dimen/y75"
+            android:button="@null"
+            android:textSize="@dimen/textSize40"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/x35"
+            android:textColor="@color/selector_text_00ff"
+            android:background="@drawable/selector_radiobutton_shadow"
+            android:text="服务费支出+"/>
+        <RadioButton
+            android:id="@+id/mywallet_withdraw"
+            android:layout_width="@dimen/x219"
+            android:layout_height="@dimen/y75"
+            android:button="@null"
+            android:textSize="@dimen/textSize40"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/x35"
+            android:textColor="@color/selector_text_00ff"
+            android:background="@drawable/selector_radiobutton_shadow"
+            android:text="提现-"/>
+    </RadioGroup>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/mywallet_recy"
+        android:layout_width="match_parent"
+        android:background="@color/background"
+        android:layout_height="match_parent"/>
+</LinearLayout>

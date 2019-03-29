@@ -1,6 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
     android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+    <include layout="@layout/include_title"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/analysis_background"
+        android:layout_marginLeft="@dimen/x30"
+        android:layout_marginRight="@dimen/x30"
+        android:layout_height="@dimen/y432">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y62"
+            android:layout_marginLeft="@dimen/x58"
+            android:includeFontPadding="false"
+            android:textSize="@dimen/textSize36"
+            android:textColor="@color/white"
+            android:text="剩余积分"/>
+
+        <TextView
+            android:id="@+id/myscore_leftscore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x95"
+            android:textStyle="bold"
+            android:includeFontPadding="false"
+            android:layout_marginTop="@dimen/x127"
+            android:layout_marginLeft="@dimen/x58"
+            android:text="240,001"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y261"
+            android:layout_marginLeft="@dimen/x58"
+            android:includeFontPadding="false"
+            android:textSize="@dimen/textSize35"
+            android:textColor="@color/white"
+            android:text="累计积分"/>
+        <TextView
+            android:id="@+id/myscore_allscore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y321"
+            android:layout_marginLeft="@dimen/x58"
+            android:includeFontPadding="false"
+            android:textSize="@dimen/textSize63"
+            android:textColor="@color/white"
+            android:text="454,554"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y261"
+            android:layout_marginLeft="@dimen/x480"
+            android:includeFontPadding="false"
+            android:textSize="@dimen/textSize35"
+            android:textColor="@color/white"
+            android:text="已兑换积分"/>
+        <TextView
+            android:id="@+id/myscore_usescore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y321"
+            android:layout_marginLeft="@dimen/x481"
+            android:includeFontPadding="false"
+            android:textSize="@dimen/textSize63"
+            android:textColor="@color/white"
+            android:text="454,554"/>
+    </RelativeLayout>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/x40"
+        android:layout_marginBottom="@dimen/x40"
+        android:gravity="center_vertical"
+        android:layout_height="@dimen/y111">
+
+        <RadioButton
+            android:id="@+id/myscore_all"
+            android:layout_width="@dimen/x219"
+            android:layout_height="@dimen/x75"
+            android:button="@null"
+            android:textSize="@dimen/textSize40"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/x40"
+            android:layout_marginLeft="@dimen/x40"
+            android:textColor="@color/selector_text_00ff"
+            android:background="@drawable/selector_radiobutton_shadow"
+            android:checked="true"
+            android:text="全部"/>
+        <RadioButton
+            android:id="@+id/myscore_change"
+            android:layout_width="@dimen/x219"
+            android:layout_height="@dimen/y75"
+            android:button="@null"
+            android:textSize="@dimen/textSize40"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/x35"
+            android:textColor="@color/selector_text_00ff"
+            android:background="@drawable/selector_radiobutton_shadow"
+            android:text="交易奖励+"/>
+        <RadioButton
+            android:id="@+id/myscore_share"
+            android:layout_width="@dimen/x219"
+            android:layout_height="@dimen/y75"
+            android:button="@null"
+            android:textSize="@dimen/textSize40"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/x35"
+            android:textColor="@color/selector_text_00ff"
+            android:background="@drawable/selector_radiobutton_shadow"
+            android:text="分享奖励+"/>
+        <RadioButton
+            android:id="@+id/myscore_changefood"
+            android:layout_width="@dimen/x219"
+            android:layout_height="@dimen/y75"
+            android:button="@null"
+            android:textSize="@dimen/textSize40"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/x35"
+            android:textColor="@color/selector_text_00ff"
+            android:background="@drawable/selector_radiobutton_shadow"
+            android:text="兑换粮草-"/>
+    </RadioGroup>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/myscore_recy"
+        android:layout_width="match_parent"
+        android:background="@color/background"
+        android:layout_height="match_parent"/>
+</LinearLayout>

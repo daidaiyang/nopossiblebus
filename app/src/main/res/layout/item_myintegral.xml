@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_marginTop="@dimen/x23"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/item_score_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/textSize46"
+        android:layout_marginTop="@dimen/x40"
+        android:layout_marginLeft="@dimen/x40"
+        android:includeFontPadding="false"
+        android:text="交易奖励"/>
+
+    <TextView
+        android:id="@+id/item_score_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textSize35"
+        android:textColor="@color/text_black_99"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/x40"
+        android:layout_marginRight="@dimen/x40"
+        android:includeFontPadding="false"
+        android:text="2018-11-15 15:14:44"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x2"
+        android:layout_marginTop="@dimen/x127"
+        android:background="@color/text_black_dd"/>
+    <TextView
+        android:id="@+id/item_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textSize52"
+        android:textColor="@color/text_black_e0c"
+        android:layout_marginTop="@dimen/y179"
+        android:layout_marginLeft="@dimen/x40"
+        android:includeFontPadding="false"
+        android:text="+2,325"/>
+    <TextView
+        android:layout_toRightOf="@id/item_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textSize35"
+        android:textColor="@color/text_black"
+        android:includeFontPadding="false"
+        android:layout_alignBaseline="@id/item_score"
+        android:text="积分"/>
+
+    <TextView
+        android:id="@+id/item_leftScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textSize52"
+        android:textColor="@color/text_black"
+        android:textStyle="bold"
+        android:layout_marginRight="@dimen/x40"
+        android:layout_marginTop="@dimen/y179"
+        android:layout_alignParentEnd="true"
+        android:includeFontPadding="false"
+        android:layout_marginBottom="@dimen/x46"
+        android:text="2,325"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textSize35"
+        android:textColor="@color/text_black"
+        android:includeFontPadding="false"
+        android:layout_toLeftOf="@id/item_leftScore"
+        android:layout_alignBaseline="@id/item_leftScore"
+        android:text="余"/>
+
+</RelativeLayout>
