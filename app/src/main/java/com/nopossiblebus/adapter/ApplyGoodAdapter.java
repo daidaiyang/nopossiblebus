@@ -24,6 +24,11 @@ public class ApplyGoodAdapter extends RecyclerView.Adapter {
 
     private Context mContext;
     private List<String> mData;
+    private OnItemClickListener onItemClickListener;
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
 
     public ApplyGoodAdapter(Context mContext, List<String> mData) {
         this.mContext = mContext;
@@ -34,7 +39,7 @@ public class ApplyGoodAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.item_applygood, viewGroup, false);
-        return new ViewHolder(view);
+        return new ViewHolder(view,onItemClickListener);
     }
 
     @Override
@@ -52,7 +57,7 @@ public class ApplyGoodAdapter extends RecyclerView.Adapter {
         return mData == null ? 0 : mData.size();
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @BindView(R.id.item_status)
         TextView itemStatus;
         @BindView(R.id.item_num)
@@ -69,10 +74,23 @@ public class ApplyGoodAdapter extends RecyclerView.Adapter {
         TextView itemTime;
         @BindView(R.id.item_rootview)
         LinearLayout rootView;
+        private OnItemClickListener onItemClickListener;
 
-        ViewHolder(View view) {
+        ViewHolder(View view,OnItemClickListener onItemClickListener) {
             super(view);
             ButterKnife.bind(this, view);
+            this.onItemClickListener = onItemClickListener;
+            view.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+            if (onItemClickListener != null)
+                onItemClickListener.onItemClcik(v,getPosition());
+        }
+    }
+
+    public interface OnItemClickListener{
+        void onItemClcik(View view,int position);
     }
 }

@@ -1,6 +1,7 @@
 package com.nopossiblebus.activies.main;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
@@ -17,6 +18,8 @@ import com.nopossiblebus.R;
 import com.nopossiblebus.activies.main.ingood.IngoodFragment;
 import com.nopossiblebus.activies.main.takeorder.TakeorderFragment;
 import com.nopossiblebus.activies.main.togood.TogoodFragment;
+import com.nopossiblebus.activies.personalcenter.PersonalcenterActivity;
+import com.nopossiblebus.activies.personalcenter.mymessage.MymessageActivity;
 import com.nopossiblebus.mvp.MVPBaseActivity;
 
 import butterknife.BindView;
@@ -94,6 +97,8 @@ public class MainActivity extends MVPBaseActivity<MainContract.View, MainPresent
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.main_mine:
+                Intent intent = new Intent(this,PersonalcenterActivity.class);
+                startActivity(intent);
                 break;
             case R.id.main_takeorder:
                 replaceFragment(0);
@@ -108,6 +113,8 @@ public class MainActivity extends MVPBaseActivity<MainContract.View, MainPresent
                 changeLine(2);
                 break;
             case R.id.main_message:
+                Intent intent1 = new Intent(this,MymessageActivity.class);
+                startActivity(intent1);
                 break;
         }
     }

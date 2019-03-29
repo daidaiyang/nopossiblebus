@@ -19,9 +19,21 @@
             </intent-filter>
         </activity>
         <activity android:name=".activies.identify.IdentifyActivity"/>
+        <activity android:name=".activies.togoodapply.TogoodApplyActivity"/>
+        <activity android:name=".activies.gooddetail.GooddetailActivity"/>
         <activity android:name=".activies.confirorder.ConfirorderActivity"/>
-        <activity android:name=".dialog.TakeOrderDetailDialog"
-            android:theme="@style/BottomDialogStyle"></activity>
+        <activity android:name=".activies.onekeysaveorder.OnekeysaveorderActivity"/>
+        <activity android:name=".activies.togoodapplydetail.TogoodapplydetailActivity"/>
+        <activity android:name=".activies.personalcenter.PersonalcenterActivity"/>
+        <activity android:name=".activies.personalcenter.setworktime.SetworktimeActivity"/>
+        <activity android:name=".activies.personalcenter.personal.PersonalActivity"/>
+        <activity android:name=".activies.personalcenter.mywallet.MywalletActivity"/>
+        <activity android:name=".activies.personalcenter.mysetting.MysettingActivity"/>
+        <activity android:name=".activies.personalcenter.mymessage.MymessageActivity"/>
+        <activity android:name=".activies.personalcenter.mykucun.MykucunActivity"/>
+        <activity android:name=".activies.personalcenter.myintegral.MyintegralActivity"/>
+        <activity android:name=".activies.personalcenter.changepass.ChangepassActivity"/>
+        <activity android:name=".activies.personalcenter.changeaccount.ChangeaccountActivity"/>
     </application>
 
 </manifest>

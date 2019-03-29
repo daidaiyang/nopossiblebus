@@ -129,11 +129,12 @@
             </LinearLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_marginLeft="@dimen/x40"
-                android:layout_marginRight="@dimen/x2"
+                android:paddingLeft="@dimen/x40"
+                android:background="@color/white"
+                android:paddingRight="@dimen/x2"
                 android:layout_height="wrap_content">
                 <android.support.v7.widget.RecyclerView
-                    android:id="@+id/analysis_ingood_number"
+                    android:id="@+id/analysis_name_number"
                     android:background="@color/white"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
@@ -163,7 +164,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <android.support.v7.widget.RecyclerView
-                    android:id="@+id/analysis_name_number"
+                    android:id="@+id/analysis_ingood_number"
                     android:layout_width="match_parent"
                     android:background="@color/white"
                     android:layout_height="wrap_content"

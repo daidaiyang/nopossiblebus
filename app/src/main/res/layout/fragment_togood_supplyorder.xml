@@ -1,11 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="供货订单"/>
+    <include layout="@layout/include_title"/>
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y127"
+        android:orientation="horizontal">
+        <RadioGroup
+            android:id="@+id/supplyorder_rg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/supplyorder_rb_all"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:text="全部"
+                android:paddingLeft="@dimen/x58"
+                android:paddingRight="@dimen/x45"
+                android:gravity="center"
+                android:textColor="@color/selector_text_ingoodorder"
+                android:textStyle=""
+                android:checked="true"
+                />
+            <View
+                android:layout_width="@dimen/x3"
+                android:layout_height="@dimen/x29"
+                android:layout_gravity="center"
+                android:background="@color/text_black_66"/>
+            <RadioButton
+                android:id="@+id/supplyorder_rb_un"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:text="待发货"
+                android:paddingLeft="@dimen/x45"
+                android:paddingRight="@dimen/x45"
+                android:gravity="center"
+                android:textColor="@color/selector_text_ingoodorder"
+                />
+            <View
+                android:layout_width="@dimen/x3"
+                android:layout_height="@dimen/x29"
+                android:layout_gravity="center"
+                android:background="@color/text_black_66"/>
+            <RadioButton
+                android:id="@+id/supplyorder_rb_already"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:text="已完成"
+                android:paddingLeft="@dimen/x45"
+                android:paddingRight="@dimen/x45"
+                android:gravity="center"
+                android:textColor="@color/selector_text_ingoodorder"
+                />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="@dimen/x20"
+        android:background="@color/background">
+
+        <cn.bingoogolapple.refreshlayout.BGARefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/supplyorder_recy"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

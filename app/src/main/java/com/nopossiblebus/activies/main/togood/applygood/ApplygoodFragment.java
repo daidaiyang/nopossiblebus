@@ -1,6 +1,7 @@
 package com.nopossiblebus.activies.main.togood.applygood;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -16,6 +17,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.nopossiblebus.R;
+import com.nopossiblebus.activies.togoodapply.TogoodApplyActivity;
+import com.nopossiblebus.activies.togoodapplydetail.TogoodapplydetailActivity;
 import com.nopossiblebus.adapter.ApplyGoodAdapter;
 import com.nopossiblebus.mvp.MVPBaseFragment;
 
@@ -77,6 +80,8 @@ public class ApplygoodFragment extends MVPBaseFragment<ApplygoodContract.View, A
     }
 
     private void initView() {
+        titleBack.setVisibility(View.GONE);
+        title.setText("供货申请");
         togoodApplygoodBga.setDelegate(this);
         BGANormalRefreshViewHolder holder = new BGANormalRefreshViewHolder(getContext(),true);
         holder.setLoadingMoreText("正在加载中");
@@ -89,6 +94,7 @@ public class ApplygoodFragment extends MVPBaseFragment<ApplygoodContract.View, A
         }
         mAdapter = new ApplyGoodAdapter(getContext(),mData);
         togoodApplygoodRecy.setAdapter(mAdapter);
+        mAdapter.setOnItemClickListener(onItemclick);
     }
 
     @Override
@@ -103,6 +109,9 @@ public class ApplygoodFragment extends MVPBaseFragment<ApplygoodContract.View, A
             case R.id.title_back:
                 break;
             case R.id.applygood_write:
+                Intent intent = new Intent(getContext(),TogoodApplyActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
                 break;
         }
     }
@@ -116,4 +125,14 @@ public class ApplygoodFragment extends MVPBaseFragment<ApplygoodContract.View, A
     public boolean onBGARefreshLayoutBeginLoadingMore(BGARefreshLayout refreshLayout) {
         return false;
     }
+
+
+    private ApplyGoodAdapter.OnItemClickListener onItemclick = new ApplyGoodAdapter.OnItemClickListener() {
+        @Override
+        public void onItemClcik(View view, int position) {
+            Intent intent = new Intent(getContext(),TogoodapplydetailActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
+    };
 }

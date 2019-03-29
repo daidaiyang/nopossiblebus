@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/include_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y141"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/x58"
+                    android:paddingRight="@dimen/x58">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="负责人姓名"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textSize40" />
+
+                    <EditText
+                        android:id="@+id/togoodapply_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/x337"
+                        android:background="@null"
+                        android:gravity="center_vertical|left"
+                        android:hint="请输入姓名"
+                        android:minHeight="@dimen/y141"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textSize40" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x2"
+                    android:layout_marginLeft="@dimen/x58"
+                    android:layout_marginRight="@dimen/x58"
+                    android:background="@color/text_black_ee" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y141"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/x58"
+                    android:paddingRight="@dimen/x58">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="联系电话"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textSize40" />
+
+                    <EditText
+                        android:id="@+id/togoodapply_tel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/x337"
+                        android:background="@null"
+                        android:gravity="center_vertical|left"
+                        android:hint="请输入电话"
+                        android:minHeight="@dimen/y141"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textSize40" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x2"
+                    android:layout_marginLeft="@dimen/x58"
+                    android:layout_marginRight="@dimen/x58"
+                    android:background="@color/text_black_ee" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y593"
+                    android:layout_marginTop="@dimen/x50"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/x58"
+                        android:layout_marginRight="@dimen/x58"
+                        android:layout_marginBottom="@dimen/x55"
+                        android:text="请上传负责人的身份证正反面照片，保持证件清晰可见，否则将无法通过审核。仅支持.jpg格式。"
+                        android:textColor="@color/text_black_66"
+                        android:textSize="@dimen/textSize35" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:layout_width="@dimen/x461"
+                            android:layout_height="@dimen/y340"
+                            android:layout_marginLeft="@dimen/x58">
+
+                            <RelativeLayout
+                                android:id="@+id/togoodapply_upidcard_zheng_rl"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/rect_4_dd"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="@dimen/x242"
+                                    android:layout_height="@dimen/y161"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="@dimen/x58"
+                                    android:src="@drawable/idcard_zheng" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="@dimen/x50"
+                                    android:text="上传身份证正面照"
+                                    android:textColor="@color/text_black_99"
+                                    android:textSize="@dimen/textSize35" />
+                            </RelativeLayout>
+
+                            <ImageView
+                                android:id="@+id/togoodapply_upidcard_img"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@color/background"
+                                android:visibility="gone" />
+
+
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="@dimen/x461"
+                            android:layout_height="@dimen/y340"
+                            android:layout_marginLeft="@dimen/x43">
+
+                            <RelativeLayout
+                                android:id="@+id/togoodapply_upidcard_fan_rl"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/rect_4_dd"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="@dimen/x242"
+                                    android:layout_height="@dimen/y161"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="@dimen/x58"
+                                    android:src="@drawable/idcard_back" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="@dimen/x50"
+                                    android:text="上传身份证背面照"
+                                    android:textColor="@color/text_black_99"
+                                    android:textSize="@dimen/textSize35" />
+                            </RelativeLayout>
+
+                            <ImageView
+                                android:id="@+id/togoodapply_idcard_fan_img"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@color/background"
+                                android:visibility="gone" />
+                        </FrameLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y593"
+                android:layout_marginTop="@dimen/x29"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x58"
+                    android:layout_marginTop="@dimen/x58"
+                    android:layout_marginRight="@dimen/x58"
+                    android:layout_marginBottom="@dimen/x55"
+                    android:text="@string/identify_noti"
+                    android:textColor="@color/text_black_66"
+                    android:textSize="@dimen/textSize35" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="@dimen/x461"
+                        android:layout_height="@dimen/y340"
+                        android:layout_marginLeft="@dimen/x58">
+
+                        <RelativeLayout
+                            android:id="@+id/togoodapply_upyingye_rl"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/rect_4_dd"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/x242"
+                                android:layout_height="@dimen/y161"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="@dimen/x58"
+                                android:src="@drawable/yingyezhizhao" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="@dimen/x50"
+                                android:text="上传营业执照"
+                                android:textColor="@color/text_black_99"
+                                android:textSize="@dimen/textSize35" />
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:id="@+id/togoodapply_upyingye_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@color/background"
+                            android:visibility="gone" />
+
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="@dimen/x461"
+                        android:layout_height="@dimen/y340"
+                        android:layout_marginLeft="@dimen/x43">
+
+                        <RelativeLayout
+                            android:id="@+id/togoodapply_ypfood_rl"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/rect_4_dd"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/x242"
+                                android:layout_height="@dimen/y161"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="@dimen/x58"
+                                android:src="@drawable/yingyezhizhao" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="@dimen/x50"
+                                android:text="上传食品流通许可证"
+                                android:textColor="@color/text_black_99"
+                                android:textSize="@dimen/textSize35" />
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:id="@+id/togoodapply_ypfood_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@color/background"
+                            android:visibility="gone" />
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x23"
+                android:background="@color/white"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/y104"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/x40"
+                    android:textSize="@dimen/textSize35"
+                    android:textColor="@color/text_black_0f"
+                    android:text="申请供应的商品"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/togoodapply_recy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/togoodapply_recyadd"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y104"
+                    android:background="@drawable/rect_circle_x12_cc"
+                    android:gravity="center"
+                    android:textColor="@color/text_black_33"
+                    android:textSize="@dimen/textSize40"
+                    android:layout_marginLeft="@dimen/x40"
+                    android:layout_marginRight="@dimen/x40"
+                    android:layout_marginBottom="@dimen/y127"
+                    android:text="添加一行"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    
+    <TextView
+        android:id="@+id/togoodapply_commit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y127"
+        android:background="@color/text_black_0f"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textSize46"
+        android:text="提交申请"/>
+
+</LinearLayout>
