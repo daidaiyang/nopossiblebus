@@ -100,6 +100,7 @@ public class OnekeysaveorderActivity extends MVPBaseActivity<OnekeysaveorderCont
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.title_back:
+                OnekeysaveorderActivity.this.finish();
                 break;
             case R.id.onekey_selectAll:
                 break;

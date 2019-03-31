@@ -1,11 +1,9 @@
 package com.nopossiblebus.activies.main.takeorder;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -28,6 +26,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 import cn.bingoogolapple.refreshlayout.BGANormalRefreshViewHolder;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
@@ -83,15 +82,15 @@ public class TakeorderFragment extends MVPBaseFragment<TakeorderContract.View, T
         mData.add("");
         mData.add("");
         takeorderBgaLayout.setDelegate(this);
-        BGANormalRefreshViewHolder holder = new BGANormalRefreshViewHolder(getContext(),true);
+        BGANormalRefreshViewHolder holder = new BGANormalRefreshViewHolder(getContext(), true);
         holder.setLoadingMoreText("加载中");
         takeorderBgaLayout.setIsShowLoadingMoreView(true);
         takeorderBgaLayout.setRefreshViewHolder(holder);
         takeorderRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
-        takeorderRecycler.addItemDecoration(new RecycleViewDivider(getContext(),LinearLayoutManager.VERTICAL,
-                (int)getResources().getDimension(R.dimen.x10),
+        takeorderRecycler.addItemDecoration(new RecycleViewDivider(getContext(), LinearLayoutManager.VERTICAL,
+                (int) getResources().getDimension(R.dimen.x10),
                 getResources().getColor(R.color.background)));
-        mAdapter = new TakeOrderItemAdapter(getContext(),mData);
+        mAdapter = new TakeOrderItemAdapter(getContext(), mData);
         takeorderRecycler.setAdapter(mAdapter);
         mAdapter.setClickListener(this);
     }
@@ -114,7 +113,7 @@ public class TakeorderFragment extends MVPBaseFragment<TakeorderContract.View, T
 
     @Override
     public void onItemClick(View v, int position) {
-        if (dialog == null){
+        if (dialog == null) {
             dialog = new TakeOrderDetailDialog(getContext());
         }
         dialog.show();
@@ -122,10 +121,25 @@ public class TakeorderFragment extends MVPBaseFragment<TakeorderContract.View, T
 
     @Override
     public void onTakeClick(View v, int position) {
-        Log.d("ssssssssssssssssssss","taketaketaketaketaketake");
-        if (identifyDialog == null){
+        Log.d("ssssssssssssssssssss", "taketaketaketaketaketake");
+        if (identifyDialog == null) {
             identifyDialog = new IdentifyDialog(getContext());
         }
         identifyDialog.show();
+    }
+
+    @OnClick({R.id.takeorder_rbcanTake, R.id.takeorder_needSend, R.id.takeorder_rbfinish})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.takeorder_rbcanTake:
+
+                break;
+            case R.id.takeorder_needSend:
+
+                break;
+            case R.id.takeorder_rbfinish:
+
+                break;
+        }
     }
 }

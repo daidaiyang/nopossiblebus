@@ -76,6 +76,7 @@ public class IdentifyActivity extends MVPBaseActivity<IdentifyContract.View, Ide
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.identify_cancle:
+                IdentifyActivity.this.finish();
                 break;
             case R.id.identify_upyingye_rl:
                 break;

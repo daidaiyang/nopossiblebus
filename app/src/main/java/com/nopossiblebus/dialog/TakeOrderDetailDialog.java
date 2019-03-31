@@ -1,16 +1,14 @@
 package com.nopossiblebus.dialog;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
+import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -22,13 +20,14 @@ import com.nopossiblebus.R;
 import com.nopossiblebus.adapter.TakeOrderDetailLeftItemAdapter;
 import com.nopossiblebus.adapter.TakeOrderDetailRightItemAdapter;
 import com.nopossiblebus.customview.StarBar;
-import com.nopossiblebus.mvp.MVPBaseActivity;
 import com.nopossiblebus.utils.RecycleViewDivider;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class TakeOrderDetailDialog extends Dialog {
     @BindView(R.id.close)
@@ -99,8 +98,6 @@ public class TakeOrderDetailDialog extends Dialog {
     private TakeOrderDetailLeftItemAdapter mLeftAdapter;
 
 
-
-
     public TakeOrderDetailDialog(@NonNull Context context) {
         super(context, R.style.BottomDialogStyle);
         mContext = context;
@@ -111,12 +108,11 @@ public class TakeOrderDetailDialog extends Dialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dialog_takeorder_detail);
-        leftRecy = findViewById(R.id.takeorder_detail_left_recy);
-        rightRecy = findViewById(R.id.takeorder_detail_right_recy);
+        ButterKnife.bind(this);
         init();
     }
 
-    private void init(){
+    private void init() {
         mData = new ArrayList<>();
         mData.add("");
         mData.add("");
@@ -132,23 +128,36 @@ public class TakeOrderDetailDialog extends Dialog {
         mType.add("");
         leftRecy.setLayoutManager(new LinearLayoutManager(getContext()));
         rightRecy.setLayoutManager(new LinearLayoutManager(getContext()));
-        rightRecy.addItemDecoration(new RecycleViewDivider(getContext(),LinearLayoutManager.VERTICAL,
+        rightRecy.addItemDecoration(new RecycleViewDivider(getContext(), LinearLayoutManager.VERTICAL,
                 (int) getContext().getResources().getDimension(R.dimen.x3),
                 getContext().getResources().getColor(R.color.text_black_dd)));
-        mLeftAdapter = new TakeOrderDetailLeftItemAdapter(getContext(),mType);
-        mRightAdapter = new TakeOrderDetailRightItemAdapter(getContext(),mData);
+        mLeftAdapter = new TakeOrderDetailLeftItemAdapter(getContext(), mType);
+        mRightAdapter = new TakeOrderDetailRightItemAdapter(getContext(), mData);
         rightRecy.setAdapter(mRightAdapter);
         leftRecy.setAdapter(mLeftAdapter);
     }
 
 
-        @Override
+    @Override
     public void show() {
         super.show();
         WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
-        layoutParams.gravity= Gravity.BOTTOM;
-        layoutParams.width= ViewGroup.LayoutParams.MATCH_PARENT;
-        layoutParams.height= (int) getContext().getResources().getDimension(R.dimen.y1736);
+        layoutParams.gravity = Gravity.BOTTOM;
+        layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT;
+        layoutParams.height = (int) getContext().getResources().getDimension(R.dimen.y1736);
         getWindow().setAttributes(layoutParams);
+    }
+
+    @OnClick({R.id.close, R.id.takeorder_detail_print, R.id.takeorder_detail_startSend})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.close:
+                TakeOrderDetailDialog.this.cancel();
+                break;
+            case R.id.takeorder_detail_print:
+                break;
+            case R.id.takeorder_detail_startSend:
+                break;
+        }
     }
 }

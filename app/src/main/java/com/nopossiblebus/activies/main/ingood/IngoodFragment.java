@@ -61,6 +61,7 @@ public class IngoodFragment extends MVPBaseFragment<IngoodContract.View, IngoodP
 
     private void initView() {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navigation.setItemIconTintList(null);
         BottomNavigationViewHelper.disableShiftMode(navigation);
         setDefaultFragment();
     }
@@ -82,20 +83,25 @@ public class IngoodFragment extends MVPBaseFragment<IngoodContract.View, IngoodP
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            resetToDefaultIcon();
             switch (item.getItemId()) {
                 case R.id.navigation_goods:
+                    item.setIcon(R.mipmap.goods_selected);
                     replaceFragment(0);
                     ((MainActivity)getActivity()).showTitle();
                     return true;
                 case R.id.navigation_cart:
+                    item.setIcon(R.mipmap.cart_selected);
                     replaceFragment(1);
                     ((MainActivity)getActivity()).showTitle();
                     return true;
                 case R.id.navigation_order:
+                    item.setIcon(R.mipmap.ingood_selected);
                     replaceFragment(2);
                     ((MainActivity)getActivity()).showTitle();
                     return true;
                 case R.id.navigation_anaylsis:
+                    item.setIcon(R.mipmap.analysis_selected);
                     replaceFragment(3);
                     ((MainActivity)getActivity()).hideTitle();
                     return true;
@@ -103,6 +109,18 @@ public class IngoodFragment extends MVPBaseFragment<IngoodContract.View, IngoodP
             return false;
         }
     };
+
+
+    private void resetToDefaultIcon(){
+        MenuItem good = navigation.getMenu().findItem(R.id.navigation_goods);
+        good.setIcon(R.mipmap.goods_unselected);
+        MenuItem cart = navigation.getMenu().findItem(R.id.navigation_cart);
+        cart.setIcon(R.mipmap.cart_unselected);
+        MenuItem order = navigation.getMenu().findItem(R.id.navigation_order);
+        order.setIcon(R.mipmap.ingood_unselected);
+        MenuItem anaylsis = navigation.getMenu().findItem(R.id.navigation_anaylsis);
+        anaylsis.setIcon(R.mipmap.analysis_unselected);
+    }
 
     private void replaceFragment(int position){
         transaction = getChildFragmentManager().beginTransaction();

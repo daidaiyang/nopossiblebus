@@ -3,6 +3,7 @@ package com.nopossiblebus.activies.main.ingood.goods;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.nopossiblebus.R;
+import com.nopossiblebus.activies.onekeysaveorder.OnekeysaveorderActivity;
 import com.nopossiblebus.customview.CircleImageView;
 import com.nopossiblebus.customview.WaveView;
 import com.nopossiblebus.dialog.RecognitionDialog;
@@ -28,6 +30,7 @@ import com.nopossiblebus.mvp.MVPBaseFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 
 /**
@@ -144,5 +147,18 @@ public class GoodsFragment extends MVPBaseFragment<GoodsContract.View, GoodsPres
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+
+    @OnClick({R.id.first_function_scan, R.id.first_function_order})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.first_function_scan:
+                break;
+            case R.id.first_function_order:
+                Intent intent = new Intent(getContext(), OnekeysaveorderActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                break;
+        }
     }
 }

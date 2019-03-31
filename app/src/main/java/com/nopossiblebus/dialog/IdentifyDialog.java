@@ -2,6 +2,7 @@ package com.nopossiblebus.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.Gravity;
@@ -10,6 +11,7 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.nopossiblebus.R;
+import com.nopossiblebus.activies.identify.IdentifyActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,8 +35,11 @@ public class IdentifyDialog extends Dialog {
     @BindView(R.id.dialog_tijiao)
     TextView dialogTijiao;
 
+    private Context mContext;
+
     public IdentifyDialog(@NonNull Context context) {
         super(context, R.style.LoadingDialog);
+        mContext = context;
         setCanceledOnTouchOutside(true);
     }
 
@@ -49,6 +54,9 @@ public class IdentifyDialog extends Dialog {
     @OnClick(R.id.dialog_tijiao)
     public void onViewClicked() {
         IdentifyDialog.this.cancel();
+        Intent intent = new Intent(mContext,IdentifyActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        mContext.startActivity(intent);
     }
 
     @Override

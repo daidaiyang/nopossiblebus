@@ -6,7 +6,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
@@ -17,6 +19,9 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 一鍵下單以及我的商品庫存復用一個
+ */
 public class OneKeyLeftItemAdapter extends RecyclerView.Adapter {
     private Context mContext;
     private List<String> mData;
@@ -41,6 +46,11 @@ public class OneKeyLeftItemAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         ViewHolder holder = (ViewHolder) viewHolder;
+        if (i==0){
+            holder.leftitemTitle.setChecked(true);
+        }else {
+            holder.leftitemTitle.setChecked(false);
+        }
     }
 
     @Override
@@ -52,9 +62,9 @@ public class OneKeyLeftItemAdapter extends RecyclerView.Adapter {
         @BindView(R.id.leftitem_leftLine)
         View leftitemLeftLine;
         @BindView(R.id.leftitem_title)
-        TextView leftitemTitle;
+        CheckBox leftitemTitle;
         @BindView(R.id.leftitem_root)
-        LinearLayout leftitemRoot;
+        RelativeLayout leftitemRoot;
         private OnItemClickListener clickListener;
 
         ViewHolder(View view,OnItemClickListener clickListener) {

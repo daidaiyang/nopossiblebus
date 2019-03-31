@@ -45,6 +45,8 @@ public class TogoodapplydetailActivity extends MVPBaseActivity<Togoodapplydetail
     ImageView titleBack;
     @BindView(R.id.title)
     TextView title;
+    @BindView(R.id.commit_again)
+    TextView commitAgain;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

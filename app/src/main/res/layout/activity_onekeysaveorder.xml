@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/x25"
+            android:layout_marginLeft="@dimen/x37"
             android:layout_marginTop="@dimen/x55"
             android:includeFontPadding="false"
             android:text="常购商品"
@@ -27,7 +27,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/x25"
+            android:layout_marginLeft="@dimen/x37"
             android:layout_marginTop="@dimen/x35"
             android:includeFontPadding="false"
             android:text="这里有您经常购买的商品，可以快速下单"
@@ -59,7 +59,7 @@
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/onekey_leftRecy"
-                android:layout_width="@dimen/x170"
+                android:layout_width="@dimen/x253"
                 android:layout_height="match_parent"
                 android:background="@color/white" />
 

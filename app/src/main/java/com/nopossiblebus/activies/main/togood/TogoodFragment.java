@@ -55,9 +55,11 @@ public class TogoodFragment extends MVPBaseFragment<TogoodContract.View, TogoodP
 
     private void initView() {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navigation.setItemIconTintList(null);
         BottomNavigationViewHelper.disableShiftMode(navigation);
         setDefaultFragment();
     }
+
 
 
     private void setDefaultFragment() {
@@ -77,20 +79,25 @@ public class TogoodFragment extends MVPBaseFragment<TogoodContract.View, TogoodP
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            resetToDefaultIcon();
             switch (item.getItemId()) {
                 case R.id.navigation_supplygood:
+                    item.setIcon(R.mipmap.goods_selected);
                     replaceFragment(0);
                     ((MainActivity)getActivity()).showTitle();
                     return true;
                 case R.id.navigation_applygood:
+                    item.setIcon(R.mipmap.togood_apply);
                     replaceFragment(1);
                     ((MainActivity)getActivity()).hideTitle();
                     return true;
                 case R.id.navigation_supplyorder:
+                    item.setIcon(R.mipmap.ingood_selected);
                     replaceFragment(2);
                     ((MainActivity)getActivity()).hideTitle();
                     return true;
                 case R.id.navigation_anaylsis2:
+                    item.setIcon(R.mipmap.analysis_selected);
                     replaceFragment(3);
                     ((MainActivity)getActivity()).hideTitle();
                     return true;
@@ -98,6 +105,17 @@ public class TogoodFragment extends MVPBaseFragment<TogoodContract.View, TogoodP
             return false;
         }
     };
+
+    private void resetToDefaultIcon(){
+        MenuItem good = navigation.getMenu().findItem(R.id.navigation_supplygood);
+        good.setIcon(R.mipmap.goods_unselected);
+        MenuItem applygood = navigation.getMenu().findItem(R.id.navigation_applygood);
+        applygood.setIcon(R.mipmap.togood_apply_un);
+        MenuItem supplyorder = navigation.getMenu().findItem(R.id.navigation_supplyorder);
+        supplyorder.setIcon(R.mipmap.ingood_unselected);
+        MenuItem anaylsis = navigation.getMenu().findItem(R.id.navigation_anaylsis2);
+        anaylsis.setIcon(R.mipmap.analysis_unselected);
+    }
 
     private void replaceFragment(int position){
         transaction = getChildFragmentManager().beginTransaction();
