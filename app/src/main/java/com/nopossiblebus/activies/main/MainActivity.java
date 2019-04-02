@@ -1,6 +1,7 @@
 package com.nopossiblebus.activies.main;
 
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -21,10 +22,12 @@ import com.nopossiblebus.activies.main.togood.TogoodFragment;
 import com.nopossiblebus.activies.personalcenter.PersonalcenterActivity;
 import com.nopossiblebus.activies.personalcenter.mymessage.MymessageActivity;
 import com.nopossiblebus.mvp.MVPBaseActivity;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.reactivex.functions.Consumer;
 
 
 /**
@@ -67,6 +70,9 @@ public class MainActivity extends MVPBaseActivity<MainContract.View, MainPresent
     private TakeorderFragment takeorderFragment;
     private IngoodFragment ingoodFragment;
     private TogoodFragment togoodFragment;
+
+
+    private boolean isPermission;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -199,5 +205,18 @@ public class MainActivity extends MVPBaseActivity<MainContract.View, MainPresent
         mainIngoodLine.setVisibility(View.INVISIBLE);
         mainTakeorderLine.setVisibility(View.INVISIBLE);
         mainTogoodLine.setVisibility(View.INVISIBLE);
+    }
+
+    public boolean requestPermission(String... permissions){
+
+        RxPermissions rxPermissions = new RxPermissions(this);
+        rxPermissions.request(permissions)
+                .subscribe(new Consumer<Boolean>() {
+                    @Override
+                    public void accept(Boolean aBoolean) throws Exception {
+                        isPermission = aBoolean;
+                    }
+                });
+        return isPermission;
     }
 }

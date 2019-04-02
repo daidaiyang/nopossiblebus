@@ -10,5 +10,8 @@ import com.nopossiblebus.mvp.BasePresenterImpl;
  */
 
 public class GoodsPresenter extends BasePresenterImpl<GoodsContract.View> implements GoodsContract.Presenter{
-    
+
+
+
+
 }

@@ -7,4 +7,9 @@
     <string name="title_analysis">进货分析</string>
     <string name="jhdgl">进货单管理</string>
     <string name="identify_noti">请上传真实合法的营业执照和食品流通许可证，保持证件清晰可见，否则将无法通过审核。仅支持.jpg格式。</string>
+    <string name="msg_camera_framework_bug">Sorry, the Android camera encountered a problem. You may need to restart the device.</string>
+    <string name="button_ok">OK</string>
+    <string name="viewfinderview_status_text1">将二维码/条码放入取景框内</string>
+    <string name="viewfinderview_status_text2">即可自动扫描</string>
+
 </resources>

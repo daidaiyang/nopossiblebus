@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.WindowManager;
 
 import com.nopossiblebus.R;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 import com.ygs.rxretrofitlibrary.retrofit_rx.http.HttpManager;
 
@@ -26,6 +27,7 @@ public abstract class MVPBaseFragment<V extends BaseView,T extends BasePresenter
      */
     private boolean animCon = true;
     private HttpManager manager = HttpManager.getInstance();
+
 
     public void setAnimCon(boolean animCon) {
         this.animCon = animCon;

@@ -7,20 +7,67 @@ import android.widget.Toast;
 
 public class ToastUtil {
 
-    private ToastUtil() {
+    private static Toast toast = null; //toast
+
+    /**
+     * 自定义Toast,避免重复,界面中部弹出
+     */
+    public static void showCenterToast(Context context,Object msg) {
+        String content;
+        if (msg == null) {
+            content = "null";
+        } else {
+            content = msg.toString();
+        }
+        if (toast == null) {
+            toast = Toast.makeText(context, content, Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+        } else {
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.setText(content);
+        }
+        toast.show();
     }
 
-    public static void show(Context mContext, CharSequence text) {
-        if (!TextUtils.isEmpty(text)) {
-            Toast toast;
-            if (text.length() < 10) {
-                toast = Toast.makeText(mContext, text, Toast.LENGTH_SHORT);
-            } else {
-                toast = Toast.makeText(mContext, text, Toast.LENGTH_LONG);
-            }
-            toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 0);
-            toast.show();
+    /**
+     * 自定义Toast,避免重复,界面底部弹出
+     */
+    public static void showBottomToast(Context context,Object msg) {
+        String content;
+        if (msg == null) {
+            content = "数据出错";
+        } else {
+            content = msg.toString();
         }
+        if (toast == null) {
+            toast = Toast.makeText(context, content, Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.BOTTOM, 0, 0);
+        } else {
+            toast.setGravity(Gravity.BOTTOM, 0, 0);
+            toast.setText(content);
+        }
+        toast.show();
+    }
+
+    /**
+     * 自定义Toast,避免重复,界面底部弹出
+     */
+    public static void showBottomToast(Context context,int stringId) {
+        String content;
+        try {
+            content =context.getString(stringId);
+        } catch (Exception e) {
+            content = String.valueOf(stringId);
+        }
+
+        if (toast == null) {
+            toast = Toast.makeText(context, content, Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.BOTTOM, 0, 0);
+        } else {
+            toast.setGravity(Gravity.BOTTOM, 0, 0);
+            toast.setText(content);
+        }
+        toast.show();
     }
 
 }
