@@ -9,10 +9,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nopossiblebus.R;
+import com.nopossiblebus.entity.bean.BaseImageList;
+import com.nopossiblebus.entity.bean.ProductListBean;
 import com.nopossiblebus.mvp.MVPBaseActivity;
+import com.nopossiblebus.utils.AppUtil;
 import com.nopossiblebus.utils.GlideImageLoader;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,25 +62,48 @@ public class GooddetailActivity extends MVPBaseActivity<GooddetailContract.View,
 
     private List<String> imageList;
 
+    private ProductListBean bean;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gooddetail);
         ButterKnife.bind(this);
         initView();
+        EventBus.getDefault().register(this);
     }
 
     private void initView() {
         title.setText("商品详情");
         imageList = new ArrayList<>();
-        imageList.add("http://img17.3lian.com/d/file/201703/06/ea0b5efc8ab75167dd7655bcc16defca.jpg");
-        imageList.add("http://l.b2b168.com/2015/10/22/14/201510221452093659724.jpg");
-        imageList.add("http://img3.duitang.com/uploads/item/201508/26/20150826195235_xzB8K.jpeg");
+        Bundle extras = getIntent().getExtras();
+        if (extras==null){
+            goodAddcart.setVisibility(View.GONE);
+        }else {
+            goodAddcart.setVisibility(View.VISIBLE);
+        }
+
+    }
+
+    private void initData(){
+        List<BaseImageList> images_list = bean.getImages_list();
+        if (images_list!=null&&images_list.size()>0){
+            for (int i=0;i<images_list.size();i++){
+                imageList.add(images_list.get(i).getUrl());
+            }
+        }
+        goodBanner.setImages(imageList);
         goodBanner.setImageLoader(new GlideImageLoader());
         goodBanner.setIndicatorGravity(BannerConfig.RIGHT);
         goodBanner.setDelayTime(2000);
         goodBanner.setBannerStyle(BannerConfig.NUM_INDICATOR);
         goodBanner.start();
+        goodTitle.setText(bean.getTitle());
+        goodXiaoPrice.setText("￥"+ AppUtil.get2xiaoshu(bean.getSell_price()));
+        goodJinPrice.setText("￥"+AppUtil.get2xiaoshu(bean.getStock_price()));
+        goodName.setText(bean.getBrand());
+        goodPeiliao.setText("");
+        goodNum.setText(bean.getCo()==null?"":bean.getCo());
     }
 
     @OnClick({R.id.title_back, R.id.good_addcart})
@@ -85,5 +115,18 @@ public class GooddetailActivity extends MVPBaseActivity<GooddetailContract.View,
             case R.id.good_addcart:
                 break;
         }
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN,sticky = true)
+    public void dealEvent(ProductListBean bean){
+        this.bean = bean;
+        initData();
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 }

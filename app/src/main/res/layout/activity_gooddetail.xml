@@ -36,8 +36,7 @@
                 android:maxLines="2"
                 android:ellipsize="end"
                 android:includeFontPadding="false"
-                android:layout_marginTop="@dimen/x50"
-                android:text="峨眉山万弗藤椒油400ml四川特产万弗特麻青花椒调料"/>
+                android:layout_marginTop="@dimen/x50"/>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_marginLeft="@dimen/x45"
@@ -61,8 +60,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/textSize40"
-                        android:textColor="@color/black"
-                        android:text="￥28.00"/>
+                        android:textColor="@color/black"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_centerVertical="true"
@@ -81,8 +79,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/textSize40"
-                        android:textColor="@color/text_price"
-                        android:text="￥28.00"/>
+                        android:textColor="@color/text_price"/>
                 </LinearLayout>
                 <TextView
                     android:id="@+id/good_addcart"
@@ -136,8 +133,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/textSize35"
                         android:textColor="@color/black"
-                        android:layout_marginLeft="@dimen/x347"
-                        android:text="附楼"/>
+                        android:layout_marginLeft="@dimen/x347"/>
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -157,8 +153,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/textSize35"
                         android:textColor="@color/black"
-                        android:layout_marginLeft="@dimen/x347"
-                        android:text="精炼菜籽油 鲜藤椒果"/>
+                        android:layout_marginLeft="@dimen/x347"/>
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -179,8 +174,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/textSize35"
                         android:textColor="@color/black"
-                        android:layout_marginLeft="@dimen/x347"
-                        android:text="SC1058115451"/>
+                        android:layout_marginLeft="@dimen/x347"/>
                 </RelativeLayout>
             </LinearLayout>
 

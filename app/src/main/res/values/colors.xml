@@ -15,7 +15,7 @@
     <color name="background">#FFFCEB</color>
 
     <color name="circle_point">#FFC348</color>
-
+    <color name="navpage">#FFE1E8EB</color>
     <color name="text_black">#000000</color>
     <color name="text_black_33">#333333</color>
     <color name="text_black_66">#666666</color>
@@ -31,9 +31,15 @@
     <color name="text_black_e6">#1B61E6</color>
     <color name="text_black_1b">#E61B1B</color>
     <color name="text_black_e0c">#F54E0C</color>
+    <color name="text_black_9ff">#3399FF</color>
     <color name="text_price">#FF0000</color>
     <color name="text_price2">#EC0000</color>
     <color name="line_cc">#cccccc</color>
+    <color name="apply_green">#36B736</color>
+    <color name="apply_red">#EC0000</color>
+    <color name="text_fb4">#0DCFB4</color>
+
+    <color name="back_c99">#00CC99</color>
 
 
 

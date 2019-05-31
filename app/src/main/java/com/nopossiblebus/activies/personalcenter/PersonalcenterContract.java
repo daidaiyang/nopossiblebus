@@ -2,6 +2,7 @@ package com.nopossiblebus.activies.personalcenter;
 
 import android.content.Context;
 
+import com.nopossiblebus.entity.bean.UserLoginData;
 import com.nopossiblebus.mvp.BasePresenter;
 import com.nopossiblebus.mvp.BaseView;
 
@@ -12,7 +13,7 @@ import com.nopossiblebus.mvp.BaseView;
 
 public class PersonalcenterContract {
     interface View extends BaseView {
-        
+        void setUserData(UserLoginData userLoginData);
     }
 
     interface  Presenter extends BasePresenter<View> {

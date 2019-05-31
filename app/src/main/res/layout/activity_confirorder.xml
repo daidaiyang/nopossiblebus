@@ -17,8 +17,41 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/confirmorder_address_rl_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x12"
+                android:layout_marginTop="@dimen/x10"
+                android:layout_marginRight="@dimen/x12"
+                android:background="@drawable/rect_circle_x29_white"
+                android:paddingLeft="@dimen/x30"
+                android:paddingTop="@dimen/x30"
+                android:paddingRight="@dimen/x30"
+                android:paddingBottom="@dimen/x47">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/x37"
+                    android:textColor="@color/text_black"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/x22"
+                    android:text="您还没有添加收货地址"/>
+
+                <TextView
+                    android:layout_width="@dimen/x344"
+                    android:layout_height="@dimen/y95"
+                    android:background="@drawable/rect_circle_x42_0f"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/x35"
+                    android:gravity="center"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/y107"
+                    android:text="去添加收货地址"/>
+            </RelativeLayout>
 
             <RelativeLayout
+                android:visibility="gone"
                 android:id="@+id/confir_address_rl"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/y276"
@@ -27,17 +60,10 @@
                 android:layout_marginRight="@dimen/x30"
                 android:background="@drawable/rect_circle_x30_white">
 
-                <ImageView
-                    android:layout_width="@dimen/x86"
-                    android:layout_height="@dimen/y86"
-                    android:layout_marginLeft="@dimen/x35"
-                    android:layout_marginTop="@dimen/x132"
-                    android:src="@drawable/address" />
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/x156"
+                    android:layout_marginLeft="@dimen/x36"
                     android:layout_marginTop="@dimen/x58"
                     android:layout_marginRight="@dimen/x88"
                     android:orientation="vertical">
@@ -254,6 +280,7 @@
             android:text="件商品,合计："/>
 
         <TextView
+            android:id="@+id/num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"

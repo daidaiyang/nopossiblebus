@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x15"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x43"
+                android:layout_marginTop="@dimen/x58"
+                android:text="李康"
+                android:textColor="@color/text_black_33"
+                android:textSize="@dimen/textSize40" />
+
+            <TextView
+                android:id="@+id/tel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/x58"
+                android:layout_marginRight="@dimen/x43"
+                android:text="18888888888"
+                android:textColor="@color/text_black_33"
+                android:textSize="@dimen/textSize40" />
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x43"
+                android:layout_marginTop="@dimen/x128"
+                android:layout_marginRight="@dimen/x43"
+                android:text="收货地址：四川省成都市金牛区泉水街道18号泉水人家二期2单元三楼6室"
+                android:textColor="@color/text_black_33"
+                android:textSize="@dimen/textSize40" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x1"
+            android:layout_marginLeft="@dimen/x30"
+            android:layout_marginTop="@dimen/y29"
+            android:layout_marginRight="@dimen/x30"
+            android:background="@color/line_cc" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y127"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:id="@+id/moren"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x43"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/moren_ck"
+                    android:layout_width="@dimen/y46"
+                    android:layout_height="@dimen/y46"
+                    android:background="@drawable/selector_checkbox_circle"
+                    android:button="@null"
+                    android:checked="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x29"
+                    android:textSize="@dimen/textSize40"
+                    android:textColor="@color/black"
+                    android:text="默认地址" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/x213"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/y46"
+                    android:layout_height="@dimen/y46"
+                    android:src="@drawable/edit_address" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x13"
+                    android:textSize="@dimen/textSize40"
+                    android:textColor="@color/black"
+                    android:text="编辑" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/x43"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/y46"
+                    android:layout_height="@dimen/y46"
+                    android:src="@drawable/delete_address" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x12"
+                    android:textSize="@dimen/textSize40"
+                    android:textColor="@color/black"
+                    android:text="删除" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

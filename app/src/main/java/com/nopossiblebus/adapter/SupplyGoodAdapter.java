@@ -9,7 +9,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.nopossiblebus.R;
+import com.nopossiblebus.entity.bean.BaseImageList;
+import com.nopossiblebus.entity.bean.ProductListBean;
+import com.nopossiblebus.utils.AppUtil;
 
 import java.util.List;
 
@@ -19,14 +23,14 @@ import butterknife.ButterKnife;
 public class SupplyGoodAdapter extends RecyclerView.Adapter {
 
     private Context mContext;
-    private List<String> mData;
+    private List<ProductListBean> mData;
     private OnItemClickListener onItemClickListener;
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }
 
-    public SupplyGoodAdapter(Context mContext, List<String> mData) {
+    public SupplyGoodAdapter(Context mContext, List<ProductListBean> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -39,13 +43,23 @@ public class SupplyGoodAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
         ViewHolder holder = (ViewHolder) viewHolder;
-        if (i == mData.size()-1){
+        if (position == mData.size()-1){
             holder.itemLine.setVisibility(View.GONE);
         }else {
             holder.itemLine.setVisibility(View.VISIBLE);
         }
+        ProductListBean productListBean = mData.get(position);
+        List<BaseImageList> images_list = productListBean.getImages_list();
+        if (images_list!=null&&images_list.size()>0){
+            Glide.with(mContext)
+                    .load(images_list.get(0).getUrl())
+                    .into(holder.itemImg);
+        }
+        holder.itemTitle.setText(productListBean.getName());
+        holder.itemPrice.setText(String.format("￥%S", AppUtil.get2xiaoshu(productListBean.getStock_price())));
+        holder.itemAlreadyNum.setText(productListBean.getStore_no());
     }
 
     @Override

@@ -80,6 +80,9 @@ public class MainActivity extends MVPBaseActivity<MainContract.View, MainPresent
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         setDefaultFragment();
+        mPresenter.getMerchantAuth();
+        mPresenter.requestPermission();
+
     }
 
     private void setDefaultFragment() {

@@ -26,6 +26,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:background="@color/background"
+        android:overScrollMode="never"
+        android:scrollbars="none"
         android:layout_height="match_parent">
 
         <LinearLayout
@@ -97,6 +99,7 @@
                         android:background="@null"
                         android:gravity="center_vertical|left"
                         android:hint="请输入电话"
+                        android:maxLength="11"
                         android:minHeight="@dimen/y141"
                         android:textColor="@color/black"
                         android:textSize="@dimen/textSize40" />
@@ -118,7 +121,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:text="负责人姓名"
+                        android:text="店铺名称"
                         android:textColor="@color/black"
                         android:textSize="@dimen/textSize40" />
 
@@ -140,6 +143,41 @@
                     android:layout_marginLeft="@dimen/x58"
                     android:layout_marginRight="@dimen/x58"
                     android:background="@color/text_black_ee"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/y23"
+                        android:background="@color/background"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/x58"
+                        android:textSize="@dimen/textSize40"
+                        android:layout_marginBottom="@dimen/x30"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="@dimen/x43"
+                        android:text="选择可销售品类组合(可多选)"/>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:scrollbars="none"
+                        android:overScrollMode="never"
+                        android:id="@+id/recycler"
+                        android:layout_height="wrap_content"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/y23"
+                        android:background="@color/background"/>
+
+
+                </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/y593"
@@ -197,8 +235,7 @@
                                 android:id="@+id/identify_upidcard_img"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:src="@color/background"
-                                android:visibility="gone" />
+                                android:scaleType="fitXY"/>
 
 
                         </FrameLayout>
@@ -237,8 +274,7 @@
                                 android:id="@+id/identify_idcard_fan_img"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:src="@color/background"
-                                android:visibility="gone" />
+                                android:scaleType="fitXY"/>
                         </FrameLayout>
                     </LinearLayout>
 
@@ -311,8 +347,7 @@
                                     android:id="@+id/identify_upyingye_img"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:src="@color/background"
-                                    android:visibility="gone" />
+                                    android:scaleType="fitXY"/>
 
 
                             </FrameLayout>
@@ -351,8 +386,7 @@
                                     android:id="@+id/identify_ypfood_img"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:src="@color/background"
-                                    android:visibility="gone" />
+                                    android:scaleType="fitXY"/>
                             </FrameLayout>
                         </LinearLayout>
                     </LinearLayout>

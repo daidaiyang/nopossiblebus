@@ -11,6 +11,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:overScrollMode="never"
+        android:scrollbars="none"
         android:layout_weight="1">
 
         <LinearLayout
@@ -151,9 +153,8 @@
                             <ImageView
                                 android:id="@+id/togoodapply_upidcard_img"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@color/background"
-                                android:visibility="gone" />
+                                android:scaleType="fitXY"
+                                android:layout_height="match_parent" />
 
 
                         </FrameLayout>
@@ -192,8 +193,7 @@
                                 android:id="@+id/togoodapply_idcard_fan_img"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:src="@color/background"
-                                android:visibility="gone" />
+                                android:scaleType="fitXY"/>
                         </FrameLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -257,8 +257,7 @@
                             android:id="@+id/togoodapply_upyingye_img"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@color/background"
-                            android:visibility="gone" />
+                            android:scaleType="fitXY"/>
 
 
                     </FrameLayout>
@@ -297,8 +296,7 @@
                             android:id="@+id/togoodapply_ypfood_img"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@color/background"
-                            android:visibility="gone" />
+                            android:scaleType="fitXY"/>
                     </FrameLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -317,15 +315,25 @@
                     android:textSize="@dimen/textSize35"
                     android:textColor="@color/text_black_0f"
                     android:text="申请供应的商品"/>
-                <RelativeLayout
+                <LinearLayout
+                    android:id="@+id/content_ll"
                     android:layout_width="match_parent"
+                    android:orientation="vertical"
                     android:layout_height="wrap_content">
-                    <android.support.v7.widget.RecyclerView
-                        android:id="@+id/togoodapply_recy"
+                    <EditText
+                        android:id="@+id/item_name"
+                        android:layout_marginLeft="@dimen/x40"
+                        android:layout_marginRight="@dimen/x40"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        />
-                </RelativeLayout>
+                        android:hint="输入商品名称搜索"
+                        android:textSize="@dimen/textSize40"
+                        android:gravity="center_vertical|left"
+                        android:background="@drawable/rect_circle_x12_cc_kuang"
+                        android:paddingLeft="@dimen/x23"
+                        android:layout_marginBottom="@dimen/x35"
+                        android:textColor="@color/text_black"
+                        android:layout_height="@dimen/y105" />
+                </LinearLayout>
                 <TextView
                     android:id="@+id/togoodapply_recyadd"
                     android:layout_width="match_parent"

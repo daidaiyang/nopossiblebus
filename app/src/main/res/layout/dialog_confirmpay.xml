@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:background="@drawable/rect_circle_x29_ceb_top"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textSize46"
+        android:textColor="@color/text_black"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/x58"
+        android:includeFontPadding="false"
+        android:text="确认付款"/>
+    
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="@dimen/x133"
+        android:paddingLeft="@dimen/x35"
+        android:paddingRight="@dimen/x35"
+        android:paddingTop="@dimen/x30"
+        android:paddingBottom="@dimen/x30"
+        android:layout_height="@dimen/y138"
+        android:src="@drawable/close"
+        android:layout_alignParentEnd="true"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x2"
+        android:layout_marginTop="@dimen/y158"
+        android:background="@color/line_cc"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/y248"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/x58"
+            android:textColor="@color/text_black"
+            android:layout_marginRight="@dimen/x20"
+            android:includeFontPadding="false"
+            android:text="￥"/>
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/x109"
+            android:textStyle="bold"
+            android:includeFontPadding="false"
+            android:textColor="@color/text_black"
+            android:text="655.80"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textSize40"
+        android:textColor="@color/text_black"
+        android:layout_marginTop="@dimen/y456"
+        android:layout_marginLeft="@dimen/x58"
+        android:includeFontPadding="false"
+        android:text="选择支付方式"/>
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y528"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/payWechat"
+            android:layout_width="match_parent"
+            android:paddingLeft="@dimen/x58"
+            android:paddingRight="@dimen/x58"
+            android:layout_height="@dimen/x173">
+            <ImageView
+                android:layout_width="@dimen/x86"
+                android:layout_height="@dimen/x86"
+                android:layout_centerVertical="true"
+                android:src="@drawable/paywechat"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x184"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/x40"
+                android:textColor="@color/text_black"
+                android:text="微信支付"/>
+
+            <RadioButton
+                android:id="@+id/payWechat_check"
+                android:layout_width="@dimen/x46"
+                android:layout_height="@dimen/x46"
+                android:layout_centerVertical="true"
+                android:checked="true"
+                android:button="@null"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/selector_checkbox_langou"
+                />
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x2"
+            android:layout_marginLeft="@dimen/x184"
+            android:layout_marginTop="@dimen/x40"
+            android:background="@color/line_cc"/>
+        <RelativeLayout
+            android:id="@+id/payali"
+            android:layout_width="match_parent"
+            android:paddingLeft="@dimen/x58"
+            android:paddingRight="@dimen/x58"
+            android:layout_height="@dimen/x173">
+            <ImageView
+                android:layout_width="@dimen/x86"
+                android:layout_height="@dimen/x86"
+                android:layout_centerVertical="true"
+                android:src="@drawable/payali"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x184"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/textSize40"
+                android:textColor="@color/text_black"
+                android:text="支付宝支付"/>
+
+            <RadioButton
+                android:id="@+id/payali_check"
+                android:layout_width="@dimen/x46"
+                android:layout_height="@dimen/x46"
+                android:layout_centerVertical="true"
+                android:button="@null"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/selector_checkbox_langou"
+                />
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x2"
+            android:layout_marginLeft="@dimen/x184"
+            android:background="@color/line_cc"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:paddingLeft="@dimen/x58"
+            android:paddingRight="@dimen/x58"
+            android:layout_height="@dimen/x173">
+            <ImageView
+                android:layout_width="@dimen/x86"
+                android:layout_height="@dimen/x86"
+                android:layout_centerVertical="true"
+                android:src="@drawable/paycard"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x184"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/textSize40"
+                android:textColor="@color/text_black_99"
+                android:text="银行卡支付（开发中）"/>
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x2"
+            android:layout_marginLeft="@dimen/x184"
+            android:background="@color/line_cc"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/payNow"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/y115"
+        android:layout_below="@id/ll"
+        android:layout_height="@dimen/x127"
+        android:background="@color/text_black_0f"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="@dimen/textSize46"
+        android:textStyle="bold"
+        android:includeFontPadding="false"
+        android:text="立即支付"/>
+
+
+</RelativeLayout>

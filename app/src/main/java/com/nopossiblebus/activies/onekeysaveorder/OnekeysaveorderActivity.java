@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.nopossiblebus.R;
 import com.nopossiblebus.adapter.OneKeyLeftItemAdapter;
 import com.nopossiblebus.adapter.OneKeyRightItemAdapter;
+import com.nopossiblebus.entity.bean.TypeBean;
 import com.nopossiblebus.mvp.MVPBaseActivity;
 
 import java.util.ArrayList;
@@ -62,7 +63,7 @@ public class OnekeysaveorderActivity extends MVPBaseActivity<OnekeysaveorderCont
     private OneKeyRightItemAdapter rightAdapter;
     private List<String> rightData;
     private OneKeyLeftItemAdapter leftAdapter;
-    private List<String> leftData;
+    private List<TypeBean> leftData;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -91,9 +92,7 @@ public class OnekeysaveorderActivity extends MVPBaseActivity<OnekeysaveorderCont
         rightData.add("");
         rightData.add("");
         leftData = new ArrayList<>();
-        leftData.add("");
-        leftData.add("");
-        leftData.add("");
+        leftData.add(new TypeBean());
     }
 
     @OnClick({R.id.title_back, R.id.onekey_selectAll, R.id.onekey_confir})

@@ -2,6 +2,7 @@ package com.nopossiblebus.activies.personalcenter.mykucun;
 
 import android.content.Context;
 
+import com.nopossiblebus.entity.bean.MyKucunDataBean;
 import com.nopossiblebus.mvp.BasePresenter;
 import com.nopossiblebus.mvp.BaseView;
 
@@ -12,7 +13,7 @@ import com.nopossiblebus.mvp.BaseView;
 
 public class MykucunContract {
     interface View extends BaseView {
-        
+        void setData(MyKucunDataBean bean);
     }
 
     interface  Presenter extends BasePresenter<View> {

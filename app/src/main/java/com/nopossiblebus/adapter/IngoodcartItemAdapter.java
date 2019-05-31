@@ -13,8 +13,13 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.nopossiblebus.R;
 import com.nopossiblebus.customview.ShadowDrawable;
+import com.nopossiblebus.entity.bean.ProductListBean;
+import com.nopossiblebus.entity.bean.ShopCarProductBean;
+import com.nopossiblebus.utils.AppUtil;
 
 import java.util.List;
 
@@ -25,14 +30,14 @@ public class IngoodcartItemAdapter extends RecyclerView.Adapter {
 
 
     private Context mContext;
-    private List<String> mData;
+    private List<ShopCarProductBean> mData;
     private OnItemClickListener clickListener;
 
     public void setClickListener(OnItemClickListener clickListener) {
         this.clickListener = clickListener;
     }
 
-    public IngoodcartItemAdapter(Context mContext, List<String> mData) {
+    public IngoodcartItemAdapter(Context mContext, List<ShopCarProductBean> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -52,6 +57,28 @@ public class IngoodcartItemAdapter extends RecyclerView.Adapter {
                 Color.parseColor("#337C7C7C"),
                 (int) mContext.getResources().getDimension(R.dimen.x10),
                 0, 0);
+        ShopCarProductBean shopCarProductBean = mData.get(i);
+        ProductListBean product = shopCarProductBean.getProduct();
+        RequestOptions requestOptions = new RequestOptions();
+        requestOptions.placeholder(R.drawable.picture_show);
+//        if (product.getImages_list()!=null&&product.getImages_list().get(0)!=null){
+//            Glide.with(mContext)
+//                    .load(product.getImages_list().get(0))
+//                    .apply(requestOptions)
+//                    .into(holder.itemImg);
+//        }
+        holder.itemTitle.setText(product.getName());
+        holder.itemXiaoPrice.setText(AppUtil.get2xiaoshu(product.getSell_price()));
+        holder.itemJinPrice.setText(AppUtil.get2xiaoshu(product.getStock_price()));
+        holder.itemStandar.setText(product.getSpec());
+        holder.itemNum.setText(shopCarProductBean.getNum()+"");
+        if (shopCarProductBean.isChecked()){
+            holder.itemCheck.setChecked(true);
+        }else {
+            holder.itemCheck.setChecked(false);
+        }
+
+
     }
 
     @Override
@@ -59,7 +86,7 @@ public class IngoodcartItemAdapter extends RecyclerView.Adapter {
         return mData == null?0:mData.size();
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
+    static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @BindView(R.id.item_check)
         CheckBox itemCheck;
         @BindView(R.id.item_img)
@@ -87,7 +114,7 @@ public class IngoodcartItemAdapter extends RecyclerView.Adapter {
             ButterKnife.bind(this, view);
             this.clickListener = clickListener;
             view.setOnClickListener(this);
-            itemCheck.setOnCheckedChangeListener(this);
+            itemCheck.setOnClickListener(this);
             itemSub.setOnClickListener(this);
             itemPlus.setOnClickListener(this);
         }
@@ -101,16 +128,11 @@ public class IngoodcartItemAdapter extends RecyclerView.Adapter {
                 }else
                 if (v.getId() == R.id.item_plus){
                     clickListener.onPlusClick(v,getPosition());
+                }else if (v.getId() == R.id.item_check){
+                    clickListener.onCheckedClick(v,getPosition(),((CheckBox) v).isChecked());
                 }else {
                     clickListener.onItemClick(v,getPosition());
                 }
-            }
-        }
-
-        @Override
-        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            if (clickListener !=null){
-                clickListener.onCheckedClick(buttonView,getPosition(),isChecked);
             }
         }
     }

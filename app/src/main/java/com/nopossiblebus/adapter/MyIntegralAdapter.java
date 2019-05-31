@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.nopossiblebus.R;
+import com.nopossiblebus.entity.bean.MyIntegralBean;
+import com.nopossiblebus.utils.AppUtil;
+import com.nopossiblebus.utils.TimeUtil;
 
 import java.util.List;
 
@@ -18,9 +21,9 @@ import butterknife.ButterKnife;
 public class MyIntegralAdapter extends RecyclerView.Adapter {
 
     private Context mContext;
-    private List<String> mData;
+    private List<MyIntegralBean> mData;
 
-    public MyIntegralAdapter(Context mContext, List<String> mData) {
+    public MyIntegralAdapter(Context mContext, List<MyIntegralBean> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -33,8 +36,20 @@ public class MyIntegralAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
         ViewHolder holder = (ViewHolder) viewHolder;
+        MyIntegralBean myIntegralBean = mData.get(position);
+        holder.itemScoreType.setText(myIntegralBean.getRemark());
+        holder.itemLeftScore.setText(AppUtil.get2xiaoshu(myIntegralBean.getBalance()));
+        holder.itemScoreTime.setText(TimeUtil.timeStamp2Date(myIntegralBean.getCreate_time(),"yyyy-MM-dd HH:mm:ss"));
+        String trans_type = myIntegralBean.getTrans_type();
+        if (trans_type.equals("2")){
+            holder.itemScore.setText("-"+AppUtil.get2xiaoshu(myIntegralBean.getTrans_num()));
+            holder.itemScore.setTextColor(mContext.getResources().getColor(R.color.text_fb4));
+        }else {
+            holder.itemScore.setText("+"+AppUtil.get2xiaoshu(myIntegralBean.getTrans_num()));
+            holder.itemScore.setTextColor(mContext.getResources().getColor(R.color.text_black_e0c));
+        }
     }
 
     @Override

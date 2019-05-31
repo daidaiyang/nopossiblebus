@@ -2,8 +2,8 @@ package com.nopossiblebus.mvp;
 
 import android.content.Context;
 
+import com.nopossiblebus.http.http.HttpManager;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
-import com.ygs.rxretrofitlibrary.retrofit_rx.http.HttpManager;
 
 /**
  * MVPPlugin

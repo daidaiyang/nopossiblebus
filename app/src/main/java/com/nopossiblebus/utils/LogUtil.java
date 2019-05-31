@@ -25,6 +25,13 @@ public class LogUtil {
             }
         }
 
+    public static void d(Object msg) {
+        if (LEVEL <= DEBUG) {
+            if(msg!=null)
+                Log.d("不可能", msg.toString());
+        }
+    }
+
         public static void i(String tag, Object msg) {
             if (LEVEL <= INFO) {
                 if(msg!=null) {

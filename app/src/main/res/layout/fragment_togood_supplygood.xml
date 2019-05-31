@@ -2,9 +2,29 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:background="@color/background"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:id="@+id/nodata_ll"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <include layout="@layout/layout_nodata"/>
+        <TextView
+            android:id="@+id/apply_shouquan"
+            android:layout_width="@dimen/x403"
+            android:layout_height="@dimen/y104"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@drawable/rect_circle_x52_0f"
+            android:elevation="3dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/y115"
+            android:text="申请供货授权"/>
+    </LinearLayout>
     <LinearLayout
         android:id="@+id/supplygood_nopower"
         android:visibility="gone"
@@ -134,11 +154,19 @@
                 android:text="现有供应商品"/>
 
         </LinearLayout>
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/supplygood_recy"
-            android:background="@color/white"
+        <cn.bingoogolapple.refreshlayout.BGARefreshLayout
+            android:id="@+id/bgaLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/supplygood_recy"
+                android:background="@color/white"
+                android:scrollbars="none"
+                android:overScrollMode="never"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
+
     </LinearLayout>
 
 

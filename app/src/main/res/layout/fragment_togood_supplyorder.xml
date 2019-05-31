@@ -74,12 +74,15 @@
         android:background="@color/background">
 
         <cn.bingoogolapple.refreshlayout.BGARefreshLayout
+            android:id="@+id/bgaLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             >
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/supplyorder_recy"
+                android:scrollbars="none"
+                android:overScrollMode="never"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
         </cn.bingoogolapple.refreshlayout.BGARefreshLayout>

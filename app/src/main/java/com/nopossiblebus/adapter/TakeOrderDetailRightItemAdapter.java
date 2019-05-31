@@ -9,7 +9,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.nopossiblebus.R;
+import com.nopossiblebus.entity.bean.BaseImageList;
+import com.nopossiblebus.entity.bean.OrderLineBean;
+import com.nopossiblebus.entity.bean.ProductListBean;
+import com.nopossiblebus.utils.AppUtil;
 
 import java.util.List;
 
@@ -19,14 +24,14 @@ import butterknife.ButterKnife;
 public class TakeOrderDetailRightItemAdapter extends RecyclerView.Adapter {
 
     private Context mContext;
-    private List<String> mData;
+    private List<OrderLineBean> mData;
     private OnItemClickListener clickListener;
 
     public void setClickListener(OnItemClickListener clickListener) {
         this.clickListener = clickListener;
     }
 
-    public TakeOrderDetailRightItemAdapter(Context mContext, List<String> mData) {
+    public TakeOrderDetailRightItemAdapter(Context mContext, List<OrderLineBean> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -39,8 +44,19 @@ public class TakeOrderDetailRightItemAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
             ViewHolder holder = (ViewHolder) viewHolder;
+        OrderLineBean orderLineBean = mData.get(position);
+        ProductListBean product = orderLineBean.getProduct();
+        List<BaseImageList> images_list = product.getImages_list();
+        if (images_list!=null&&images_list.size()>0){
+            Glide.with(mContext)
+                    .load(images_list.get(0).getUrl())
+                    .into(holder.detailImg);
+        }
+        holder.detailTitle.setText(product.getName());
+        holder.detailNum.setText(AppUtil.get2xiaoshu(orderLineBean.getNum())+product.getSpec());
+        holder.detailPrice.setText("￥"+AppUtil.get2xiaoshu(product.getSell_price()));
     }
 
     @Override

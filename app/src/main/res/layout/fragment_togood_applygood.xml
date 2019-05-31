@@ -106,6 +106,8 @@
             android:id="@+id/togood_applygood_recy"
             android:layout_marginTop="@dimen/x20"
             android:layout_width="match_parent"
+            android:scrollbars="none"
+            android:overScrollMode="never"
             android:layout_height="match_parent"
             android:background="@color/background"/>
     </cn.bingoogolapple.refreshlayout.BGARefreshLayout>

@@ -11,9 +11,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.nopossiblebus.R;
 import com.nopossiblebus.customview.ShadowDrawable;
+import com.nopossiblebus.entity.bean.ApplyOrderDataBean;
+import com.nopossiblebus.entity.bean.ApplyOrderLineBean;
+import com.nopossiblebus.entity.bean.BaseImageList;
+import com.nopossiblebus.utils.AppUtil;
+import com.nopossiblebus.utils.TimeUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -23,14 +30,14 @@ public class ApplyGoodAdapter extends RecyclerView.Adapter {
 
 
     private Context mContext;
-    private List<String> mData;
+    private List<ApplyOrderDataBean> mData;
     private OnItemClickListener onItemClickListener;
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }
 
-    public ApplyGoodAdapter(Context mContext, List<String> mData) {
+    public ApplyGoodAdapter(Context mContext, List<ApplyOrderDataBean> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -43,13 +50,56 @@ public class ApplyGoodAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
         ViewHolder holder = (ViewHolder) viewHolder;
         ShadowDrawable.setShadowDrawable(holder.rootView, Color.parseColor("#ffffff"),
                 (int) mContext.getResources().getDimension(R.dimen.x10),
                 Color.parseColor("#337C7C7C"),
                 (int) mContext.getResources().getDimension(R.dimen.x10),
                 0, 0);
+        ApplyOrderDataBean applyOrderDataBean = mData.get(position);
+        String status = applyOrderDataBean.getStatus();
+        String applyStatus = AppUtil.getApplyStatus(status);
+        holder.itemStatus.setText(applyStatus);
+        holder.itemTime.setText(TimeUtil.timeStamp2Date(applyOrderDataBean.getCreate_time(),"yyyy.MM.DD HH:mm:ss"));
+        List<ApplyOrderLineBean> line_list = applyOrderDataBean.getLine_List();
+        holder.itemNum.setText(String.format("共%s个商品",line_list.size()));
+        List<String> list = new ArrayList<>();
+        for (int i=0;i<line_list.size();i++){
+            List<BaseImageList> product_image_list = line_list.get(i).getProduct_image_list();
+            if (product_image_list !=null){
+                for (int j=0;j<product_image_list.size();j++){
+                    BaseImageList baseImageList = product_image_list.get(j);
+                    if (baseImageList!=null){
+                        list.add(baseImageList.getUrl());
+                    }
+                }
+            }
+        }
+        if (list.size()>4){
+            list = list.subList(0, 4);
+        }
+        switch (list.size()){
+            case 4:
+                Glide.with(mContext)
+                        .load(list.get(3))
+                        .into(holder.itemImg4);
+            case 3:
+                Glide.with(mContext)
+                        .load(list.get(2))
+                        .into(holder.itemImg3);
+            case 2:
+                Glide.with(mContext)
+                        .load(list.get(1))
+                        .into(holder.itemImg2);
+            case 1:
+                Glide.with(mContext)
+                        .load(list.get(0))
+                        .into(holder.itemImg1);
+            case 0:
+
+                break;
+        }
     }
 
     @Override

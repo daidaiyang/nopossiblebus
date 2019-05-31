@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="@dimen/y258">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="@dimen/x184"
+        android:layout_height="@dimen/y184"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/x40"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textSize35"
+        android:textColor="@color/black"
+        android:layout_marginLeft="@dimen/x261"
+        android:layout_marginTop="@dimen/x50"
+        android:layout_marginRight="@dimen/x58"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:includeFontPadding="false"
+        android:text="克莉娜橄榄油3L家庭装炒菜食用油西班牙原油进口"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/x261"
+        android:layout_marginTop="@dimen/y160"
+        android:layout_marginRight="@dimen/x40"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textSize35"
+            android:textColor="@color/text_black_66"
+            android:text="已供"/>
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textSize35"
+            android:textColor="@color/text_black_0f"
+            android:text="3425"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/textSize35"
+            android:textColor="@color/text_black_66"
+            android:layout_height="wrap_content"
+            android:text="进货价："/>
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textSize35"
+            android:textColor="@color/text_black_0f"
+            android:text="￥26.00"/>
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x2"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/x40"
+        android:layout_marginRight="@dimen/x40"
+        android:background="@color/line_cc"/>
+</RelativeLayout>

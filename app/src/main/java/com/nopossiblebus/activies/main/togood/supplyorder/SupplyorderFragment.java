@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.nopossiblebus.R;
 import com.nopossiblebus.adapter.TogoodSupplyorderAdapter;
 import com.nopossiblebus.dialog.TakeOrderDetailDialog;
+import com.nopossiblebus.entity.bean.OrderListBean;
 import com.nopossiblebus.mvp.MVPBaseFragment;
 
 import java.util.ArrayList;
@@ -25,14 +26,15 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import retrofit2.http.GET;
+import cn.bingoogolapple.refreshlayout.BGANormalRefreshViewHolder;
+import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 
 /**
  * MVPPlugin
  * 邮箱 784787081@qq.com
  */
 
-public class SupplyorderFragment extends MVPBaseFragment<SupplyorderContract.View, SupplyorderPresenter> implements SupplyorderContract.View {
+public class SupplyorderFragment extends MVPBaseFragment<SupplyorderContract.View, SupplyorderPresenter> implements SupplyorderContract.View, BGARefreshLayout.BGARefreshLayoutDelegate {
 
 
     @BindView(R.id.title_back)
@@ -50,12 +52,15 @@ public class SupplyorderFragment extends MVPBaseFragment<SupplyorderContract.Vie
     @BindView(R.id.supplyorder_recy)
     RecyclerView supplyorderRecy;
     Unbinder unbinder;
+    @BindView(R.id.bgaLayout)
+    BGARefreshLayout bgaLayout;
 
 
     private TogoodSupplyorderAdapter mAdapter;
-    private List<String> mData;
+    private List<OrderListBean> mData;
     private TakeOrderDetailDialog dialog;
 
+    private String status = "";
 
 
     @Nullable
@@ -70,21 +75,58 @@ public class SupplyorderFragment extends MVPBaseFragment<SupplyorderContract.Vie
     private void initView() {
         titleBack.setVisibility(View.GONE);
         title.setText("供货单管理");
-        dialog = new TakeOrderDetailDialog(getContext());
+        dialog = new TakeOrderDetailDialog(getContext(), getThis());
         mData = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            mData.add("");
-        }
-        mAdapter = new TogoodSupplyorderAdapter(getContext(),mData);
+        mAdapter = new TogoodSupplyorderAdapter(getContext(), mData);
+        bgaLayout.setDelegate(this);
+        BGANormalRefreshViewHolder holder = new BGANormalRefreshViewHolder(getContext(),true);
+        holder.setLoadingMoreText("加载中...");
+        bgaLayout.setRefreshViewHolder(holder);
         supplyorderRecy.setLayoutManager(new LinearLayoutManager(getContext()));
         supplyorderRecy.setAdapter(mAdapter);
         mAdapter.setClickListener(click);
+        supplyorderRg.setOnCheckedChangeListener(checkChange);
+        requestData(supplyorderRg.getCheckedRadioButtonId());
     }
 
+    @Override
+    public void setData(List<OrderListBean> list) {
+        mData.clear();
+        mData.addAll(list);
+        mAdapter.notifyDataSetChanged();
+        bgaLayout.endRefreshing();
+    }
+
+    @Override
+    public void setMoreData(List<OrderListBean> list) {
+        mData.addAll(mData.size(),list);
+        mAdapter.notifyDataSetChanged();
+        bgaLayout.endLoadingMore();
+    }
+
+    private void requestData(int id) {
+        switch (id) {
+            case R.id.supplyorder_rb_all:
+                status = "";
+                break;
+            case R.id.supplyorder_rb_un:
+                status = "6";
+                break;
+            case R.id.supplyorder_rb_already:
+                status = "9";
+                break;
+        }
+        bgaLayout.beginRefreshing();
+    }
 
     TogoodSupplyorderAdapter.OnItemClickListener click = new TogoodSupplyorderAdapter.OnItemClickListener() {
         @Override
         public void onItemClick(View v, int position) {
+            if (dialog == null){
+                dialog = new TakeOrderDetailDialog(getContext(), getThis());
+            }
+            OrderListBean orderListBean = mData.get(position);
+            dialog.setData(orderListBean);
             dialog.show();
         }
 
@@ -93,9 +135,30 @@ public class SupplyorderFragment extends MVPBaseFragment<SupplyorderContract.Vie
 
         }
     };
+
+
+    private RadioGroup.OnCheckedChangeListener checkChange = new RadioGroup.OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(RadioGroup group, int checkedId) {
+            requestData(checkedId);
+        }
+    };
+
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+
+    @Override
+    public void onBGARefreshLayoutBeginRefreshing(BGARefreshLayout refreshLayout) {
+        mPresenter.getOrderList(status);
+    }
+
+    @Override
+    public boolean onBGARefreshLayoutBeginLoadingMore(BGARefreshLayout refreshLayout) {
+        mPresenter.getMoreOrderList(status);
+        return false;
     }
 }

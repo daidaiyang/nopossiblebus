@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/root"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x357"
+        android:layout_marginLeft="@dimen/x10"
+        android:layout_marginRight="@dimen/x10"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/searchgood_item_goodimg"
+            android:layout_width="@dimen/x242"
+            android:layout_height="@dimen/y242"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="@dimen/x43" />
+
+        <TextView
+            android:id="@+id/searchgood_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x315"
+            android:layout_marginTop="@dimen/x70"
+            android:layout_marginRight="@dimen/x45"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="正宗重庆特产商用餐饮瓶装树上鲜餐厨花椒油正宗重庆特产商用餐饮瓶装树上鲜餐厨花椒油"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/textSize40" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/x314"
+            android:layout_marginBottom="@dimen/x72"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/searchgood_item_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="￥23.00"
+                android:textColor="@color/text_price"
+                android:textSize="@dimen/textSize46" />
+
+            <TextView
+                android:id="@+id/searchgood_item_standar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x29"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="400ml/瓶"
+                android:textColor="@color/text_black_66"
+                android:textSize="@dimen/textSize35" />
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/searchgood_item_addcart"
+            android:layout_width="@dimen/x95"
+            android:layout_height="@dimen/y115"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:paddingRight="@dimen/y40"
+            android:paddingBottom="@dimen/x63"
+            android:src="@drawable/add_shopping" />
+    </RelativeLayout>
+
+</RelativeLayout>

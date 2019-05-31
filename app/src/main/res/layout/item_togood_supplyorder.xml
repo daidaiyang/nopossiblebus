@@ -24,8 +24,7 @@
         <com.nopossiblebus.customview.CircleImageView
             android:id="@+id/item_img"
             android:layout_width="@dimen/x58"
-            android:layout_height="@dimen/y58"
-            android:background="@color/colorPrimary"/>
+            android:layout_height="@dimen/y58"/>
 
         <TextView
             android:id="@+id/item_name"
@@ -36,8 +35,7 @@
             android:layout_marginLeft="@dimen/x17"
             android:textColor="@color/black"
             android:textSize="@dimen/textSize40"
-            android:includeFontPadding="false"
-            android:text="红星大方粮油点"/>
+            android:includeFontPadding="false"/>
     </LinearLayout>
 
     <LinearLayout
@@ -51,26 +49,22 @@
             android:id="@+id/item_good_img1"
             android:layout_width="@dimen/x184"
             android:layout_height="@dimen/y184"
-            android:layout_marginRight="@dimen/x17"
-            android:src="@color/colorPrimary"/>
+            android:layout_marginRight="@dimen/x17"/>
         <ImageView
             android:id="@+id/item_good_img2"
             android:layout_width="@dimen/x184"
             android:layout_height="@dimen/y184"
-            android:layout_marginRight="@dimen/x17"
-            android:src="@color/colorPrimary"/>
+            android:layout_marginRight="@dimen/x17"/>
         <ImageView
             android:id="@+id/item_good_img3"
             android:layout_width="@dimen/x184"
             android:layout_height="@dimen/y184"
-            android:layout_marginRight="@dimen/x17"
-            android:src="@color/colorPrimary"/>
+            android:layout_marginRight="@dimen/x17"/>
         <ImageView
             android:id="@+id/item_good_img4"
             android:layout_width="@dimen/x184"
             android:layout_height="@dimen/y184"
-            android:layout_marginRight="@dimen/x17"
-            android:src="@color/colorPrimary"/>
+            android:layout_marginRight="@dimen/x17"/>
     </LinearLayout>
 
     <LinearLayout
@@ -86,16 +80,14 @@
             android:layout_height="wrap_content"
             android:textSize="@dimen/textSize46"
             android:textColor="@color/text_price"
-            android:includeFontPadding="false"
-            android:text="￥324.00"/>
+            android:includeFontPadding="false"/>
         <TextView
             android:id="@+id/item_good_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/textSize40"
             android:textColor="@color/black"
-            android:layout_marginLeft="@dimen/x20"
-            android:text="共25件"/>
+            android:layout_marginLeft="@dimen/x20"/>
     </LinearLayout>
     <View
         android:layout_width="match_parent"
@@ -113,8 +105,7 @@
             android:textSize="@dimen/textSize35"
             android:textColor="@color/text_black_66"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/x35"
-            android:text="2019.02.22 23:56:00"/>
+            android:layout_marginLeft="@dimen/x35"/>
 
         <TextView
             android:visibility="gone"
@@ -142,7 +133,6 @@
             android:textSize="@dimen/textSize40"
             android:gravity="center"
             android:layout_marginRight="@dimen/x35"
-            android:text="订单完成"
             />
     </RelativeLayout>
     </LinearLayout>

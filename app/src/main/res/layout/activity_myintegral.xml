@@ -78,6 +78,7 @@
     </RelativeLayout>
 
     <RadioGroup
+        android:id="@+id/rg"
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_marginTop="@dimen/x40"
@@ -119,7 +120,7 @@
             android:layout_marginRight="@dimen/x35"
             android:textColor="@color/selector_text_00ff"
             android:background="@drawable/selector_radiobutton_shadow"
-            android:text="分享奖励+"/>
+            android:text="推荐奖励+"/>
         <RadioButton
             android:id="@+id/myscore_changefood"
             android:layout_width="@dimen/x219"
@@ -132,9 +133,17 @@
             android:background="@drawable/selector_radiobutton_shadow"
             android:text="兑换粮草-"/>
     </RadioGroup>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/myscore_recy"
+    <cn.bingoogolapple.refreshlayout.BGARefreshLayout
+        android:id="@+id/bgaLayout"
         android:layout_width="match_parent"
-        android:background="@color/background"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/myscore_recy"
+            android:layout_width="match_parent"
+            android:scrollbars="none"
+            android:overScrollMode="never"
+            android:background="@color/background"
+            android:layout_height="match_parent"/>
+    </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
+
 </LinearLayout>

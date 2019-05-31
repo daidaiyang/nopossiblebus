@@ -11,10 +11,18 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.nopossiblebus.R;
 import com.nopossiblebus.customview.CircleImageView;
 import com.nopossiblebus.customview.ShadowDrawable;
+import com.nopossiblebus.entity.bean.BaseImageList;
+import com.nopossiblebus.entity.bean.OrderLineBean;
+import com.nopossiblebus.entity.bean.OrderListBean;
+import com.nopossiblebus.entity.bean.ProductListBean;
+import com.nopossiblebus.utils.AppUtil;
+import com.nopossiblebus.utils.TimeUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -24,14 +32,14 @@ public class TogoodSupplyorderAdapter extends RecyclerView.Adapter {
 
 
     private Context mContext;
-    private List<String> mData;
+    private List<OrderListBean> mData;
     private OnItemClickListener clickListener;
 
     public void setClickListener(OnItemClickListener clickListener) {
         this.clickListener = clickListener;
     }
 
-    public TogoodSupplyorderAdapter(Context mContext, List<String> mData) {
+    public TogoodSupplyorderAdapter(Context mContext, List<OrderListBean> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -44,13 +52,62 @@ public class TogoodSupplyorderAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
         ViewHolder holder = (ViewHolder) viewHolder;
         ShadowDrawable.setShadowDrawable(holder.itemTogoodOrderRoot, Color.parseColor("#ffffff"),
                 (int) mContext.getResources().getDimension(R.dimen.x10),
                 Color.parseColor("#337C7C7C"),
                 (int) mContext.getResources().getDimension(R.dimen.x10),
                 0, 0);
+        OrderListBean orderListBean = mData.get(position);
+        List<OrderLineBean> order_line = orderListBean.getOrder_line();
+        String delivery_name = orderListBean.getDelivery_name();
+        holder.itemName.setText(delivery_name==null?"暂无":delivery_name);
+        holder.itemGoodPrice.setText("￥"+ AppUtil.get2xiaoshu(orderListBean.getPay_money()));
+        float totalNum = 0;
+        List<String> imgList = new ArrayList<>();
+        for (int i=0;i<order_line.size();i++){
+            OrderLineBean orderLineBean = order_line.get(i);
+            totalNum += Float.valueOf(orderLineBean.getNum());
+            ProductListBean product = orderLineBean.getProduct();
+            List<BaseImageList> images_list = product.getImages_list();
+            if (images_list!=null&&images_list.size()>0){
+                for (int j=0;j<images_list.size();j++){
+                    BaseImageList baseImageList = images_list.get(j);
+                    if (baseImageList!=null){
+                        imgList.add(baseImageList.getUrl());
+                    }
+                }
+            }
+        }
+        if (imgList.size()>4){
+            imgList = imgList.subList(0,4);
+        }
+        switch (imgList.size()){
+            case 4:
+                Glide.with(mContext)
+                        .load(imgList.get(3))
+                        .into(holder.itemGoodImg4);
+            case 3:
+                Glide.with(mContext)
+                        .load(imgList.get(2))
+                        .into(holder.itemGoodImg3);
+            case 2:
+                Glide.with(mContext)
+                        .load(imgList.get(1))
+                        .into(holder.itemGoodImg2);
+            case 1:
+                Glide.with(mContext)
+                        .load(imgList.get(0))
+                        .into(holder.itemGoodImg1);
+            case 0:
+                break;
+        }
+
+        holder.itemGoodNum.setText(String.format("共%s件",totalNum));
+        holder.itemTime.setText(TimeUtil.timeStamp2Date(orderListBean.getCreate_time(),"yyyy.MM.DD HH:mm:ss"));
+        holder.itemStatusFinish.setText(AppUtil.getStatus(orderListBean.getStatus()));
+
     }
 
     @Override

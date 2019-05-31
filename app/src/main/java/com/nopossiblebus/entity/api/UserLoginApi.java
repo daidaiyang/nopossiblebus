@@ -2,9 +2,9 @@ package com.nopossiblebus.entity.api;
 
 import com.google.gson.Gson;
 import com.nopossiblebus.entity.HttpPostService;
+import com.nopossiblebus.http.Api.BaseApi;
+import com.nopossiblebus.http.listener.HttpOnNextListener;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
-import com.ygs.rxretrofitlibrary.retrofit_rx.Api.BaseApi;
-import com.ygs.rxretrofitlibrary.retrofit_rx.listener.HttpOnNextListener;
 
 import okhttp3.RequestBody;
 import retrofit2.Retrofit;
@@ -21,14 +21,13 @@ public class UserLoginApi extends BaseApi {
     public UserLoginApi(HttpOnNextListener listener, RxAppCompatActivity rxAppCompatActivity) {
         super(listener, rxAppCompatActivity);
         setShowProgress(true);
-        setCancel(true);
-        setCache(true);
-        setMethod("v1/user-user-login");
+        setCancel(false);
+        setCache(false);
     }
 
 
-    public void setParams(String code,String phone,String pwd) {
-        userLoginBean = new UserLoginBean(code,phone,pwd);
+    public void setParams(String phone,String pwd) {
+        userLoginBean = new UserLoginBean(phone,pwd);
         String json = new Gson().toJson(userLoginBean);
         body = RequestBody.create(okhttp3.MediaType.parse("application/json; charset=utf-8"),json);
     }
@@ -41,22 +40,12 @@ public class UserLoginApi extends BaseApi {
 
 
     class UserLoginBean{
-        private String code;
         private String phone;
         private String pwd;
 
-        public UserLoginBean(String code, String phone, String pwd) {
-            this.code = code;
+        public UserLoginBean(String phone, String pwd) {
             this.phone = phone;
             this.pwd = pwd;
-        }
-
-        public String getCode() {
-            return code;
-        }
-
-        public void setCode(String code) {
-            this.code = code;
         }
 
         public String getPhone() {

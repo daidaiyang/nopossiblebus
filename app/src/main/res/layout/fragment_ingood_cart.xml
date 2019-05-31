@@ -41,13 +41,22 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/ingood_cart_bga_recy"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <include layout="@layout/include_empty_cart" />
+            <android.support.v7.widget.RecyclerView
+                android:layout_marginTop="@dimen/x10"
+                android:id="@+id/ingood_cart_bga_recy"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
     </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
     
     <RelativeLayout
+        android:id="@+id/bottom"
         android:layout_width="match_parent"
         android:layout_height="@dimen/y128">
 
@@ -57,7 +66,6 @@
             android:layout_height="@dimen/y52"
             android:background="@drawable/selector_allgood"
             android:button="@null"
-            android:checked="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/x40"
             />
@@ -76,7 +84,7 @@
             android:id="@+id/ingood_cart_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="已选23件，合计："
+            android:text="已选0件，合计："
             android:textSize="@dimen/textSize35"
             android:textColor="@color/black"
             android:layout_marginLeft="@dimen/x269"
@@ -86,7 +94,7 @@
             android:id="@+id/ingood_cart_allprice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="￥655.00"
+            android:text="￥0.00"
             android:textSize="@dimen/textSize46"
             android:textColor="@color/text_price"
             android:layout_centerVertical="true"

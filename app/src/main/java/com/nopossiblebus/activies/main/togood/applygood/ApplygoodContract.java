@@ -2,6 +2,8 @@ package com.nopossiblebus.activies.main.togood.applygood;
 
 import android.content.Context;
 
+import com.nopossiblebus.entity.bean.ApplyOrderDataBean;
+import com.nopossiblebus.entity.bean.BasePageBean;
 import com.nopossiblebus.mvp.BasePresenter;
 import com.nopossiblebus.mvp.BaseView;
 
@@ -12,7 +14,8 @@ import com.nopossiblebus.mvp.BaseView;
 
 public class ApplygoodContract {
     interface View extends BaseView {
-        
+            void setData(BasePageBean<ApplyOrderDataBean> bean);
+            void setMoreData(BasePageBean<ApplyOrderDataBean> bean);
     }
 
     interface  Presenter extends BasePresenter<View> {

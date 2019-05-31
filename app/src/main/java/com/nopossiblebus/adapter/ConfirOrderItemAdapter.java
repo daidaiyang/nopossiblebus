@@ -10,7 +10,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.nopossiblebus.R;
+import com.nopossiblebus.entity.bean.ProductListBean;
+import com.nopossiblebus.entity.bean.ShopCarProductBean;
+import com.nopossiblebus.utils.AppUtil;
 
 import java.util.List;
 
@@ -20,14 +24,14 @@ import butterknife.ButterKnife;
 public class ConfirOrderItemAdapter extends RecyclerView.Adapter {
 
     private Context mContext;
-    private List<String> mData;
+    private List<ShopCarProductBean> mData;
     private OnItemClickListener clickListener;
 
     public void setClickListener(OnItemClickListener clickListener) {
         this.clickListener = clickListener;
     }
 
-    public ConfirOrderItemAdapter(Context mContext, List<String> mData) {
+    public ConfirOrderItemAdapter(Context mContext, List<ShopCarProductBean> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -48,6 +52,17 @@ public class ConfirOrderItemAdapter extends RecyclerView.Adapter {
             }else {
                 holder.confirItemLine.setVisibility(View.VISIBLE);
             }
+        ShopCarProductBean shopCarProductBean = mData.get(i);
+        ProductListBean bean = shopCarProductBean.getProduct();
+        if (bean.getImages_list()!=null&&bean.getImages_list().size()>0){
+            Glide.with(mContext)
+                    .load(bean.getImages_list().get(0))
+                    .into(holder.confirItemImg);
+        }
+
+        holder.confirItemTitle.setText(bean.getName());
+        holder.confirItemPrice.setText("￥"+ AppUtil.get2xiaoshu(bean.getStock_price())+"/"+bean.getSpec());
+        holder.confirItemNum.setText(shopCarProductBean.getNum()+bean.getSpec());
     }
 
     @Override

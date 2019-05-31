@@ -8,11 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
 import com.nopossiblebus.R;
+import com.nopossiblebus.entity.bean.TypeBean;
 
 import java.util.List;
 
@@ -24,14 +26,14 @@ import butterknife.ButterKnife;
  */
 public class OneKeyLeftItemAdapter extends RecyclerView.Adapter {
     private Context mContext;
-    private List<String> mData;
+    private List<TypeBean> mData;
     private OnItemClickListener clickListener;
 
     public void setClickListener(OnItemClickListener clickListener) {
         this.clickListener = clickListener;
     }
 
-    public OneKeyLeftItemAdapter(Context mContext, List<String> mData) {
+    public OneKeyLeftItemAdapter(Context mContext, List<TypeBean> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -44,13 +46,16 @@ public class OneKeyLeftItemAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
         ViewHolder holder = (ViewHolder) viewHolder;
-        if (i==0){
-            holder.leftitemTitle.setChecked(true);
+        TypeBean typeBean = mData.get(position);
+        if (typeBean.isChecked()){
+            holder.leftitemLeftLine.setVisibility(View.VISIBLE);
         }else {
-            holder.leftitemTitle.setChecked(false);
+            holder.leftitemLeftLine.setVisibility(View.GONE);
         }
+        holder.leftitemTitle.setChecked(typeBean.isChecked());
+        holder.leftitemTitle.setText(typeBean.getTitle());
     }
 
     @Override
@@ -62,7 +67,7 @@ public class OneKeyLeftItemAdapter extends RecyclerView.Adapter {
         @BindView(R.id.leftitem_leftLine)
         View leftitemLeftLine;
         @BindView(R.id.leftitem_title)
-        CheckBox leftitemTitle;
+        RadioButton leftitemTitle;
         @BindView(R.id.leftitem_root)
         RelativeLayout leftitemRoot;
         private OnItemClickListener clickListener;
@@ -78,7 +83,6 @@ public class OneKeyLeftItemAdapter extends RecyclerView.Adapter {
         public void onClick(View v) {
             if (clickListener!=null){
                 clickListener.onItemClick(v,getPosition());
-                OneKeyLeftItemAdapter.this.notifyDataSetChanged();
             }
         }
     }

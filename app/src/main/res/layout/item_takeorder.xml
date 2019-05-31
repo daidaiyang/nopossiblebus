@@ -24,7 +24,6 @@
             android:id="@+id/item_takeorder_img"
             android:layout_width="@dimen/x58"
             android:layout_height="@dimen/y58"
-            android:src="@color/colorPrimary"
             />
 
         <TextView
@@ -35,8 +34,7 @@
             android:textSize="@dimen/textSize40"
             android:layout_marginLeft="@dimen/x109"
             android:layout_centerVertical="true"
-            android:includeFontPadding="false"
-            android:text="金叶大酒店"/>
+            android:includeFontPadding="false"/>
 
         <TextView
             android:id="@+id/item_takeorder_leftTime"
@@ -66,28 +64,24 @@
                 android:id="@+id/item_takeorder_img1"
                 android:layout_width="@dimen/x184"
                 android:layout_height="@dimen/y184"
-                android:src="@color/colorPrimary"
                 android:layout_marginRight="@dimen/x17"
                 />
             <ImageView
                 android:id="@+id/item_takeorder_img2"
                 android:layout_width="@dimen/x184"
                 android:layout_height="@dimen/y184"
-                android:src="@color/colorPrimary"
                 android:layout_marginRight="@dimen/x17"
                 />
             <ImageView
                 android:id="@+id/item_takeorder_img3"
                 android:layout_width="@dimen/x184"
                 android:layout_height="@dimen/y184"
-                android:src="@color/colorPrimary"
                 android:layout_marginRight="@dimen/x17"
                 />
             <ImageView
                 android:id="@+id/item_takeorder_img4"
                 android:layout_width="@dimen/x184"
                 android:layout_height="@dimen/y184"
-                android:src="@color/colorPrimary"
                 android:layout_marginRight="@dimen/x17"
                 />
         </LinearLayout>
@@ -105,8 +99,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/textSize46"
                 android:includeFontPadding="false"
-                android:textColor="@color/text_price"
-                android:text="￥324.00"/>
+                android:textColor="@color/text_price"/>
             <TextView
                 android:id="@+id/item_takeorder_num"
                 android:layout_width="wrap_content"
@@ -114,8 +107,7 @@
                 android:textSize="@dimen/textSize40"
                 android:includeFontPadding="false"
                 android:textColor="@color/black"
-                android:layout_marginLeft="@dimen/x20"
-                android:text="共25件"/>
+                android:layout_marginLeft="@dimen/x20"/>
         </LinearLayout>
 
         <View

@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 
 import com.nopossiblebus.R;
+import com.nopossiblebus.entity.bean.TypeBean;
 
 import java.util.List;
 
@@ -18,14 +19,14 @@ import butterknife.ButterKnife;
 public class TakeOrderDetailLeftItemAdapter extends RecyclerView.Adapter {
 
     private Context mContext;
-    private List<String> mData;
+    private List<TypeBean> mData;
     private OnItemClickListener itemClickListener;
 
     public void setItemClickListener(OnItemClickListener itemClickListener) {
         this.itemClickListener = itemClickListener;
     }
 
-    public TakeOrderDetailLeftItemAdapter(Context mContext, List<String> mData) {
+    public TakeOrderDetailLeftItemAdapter(Context mContext, List<TypeBean> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -40,6 +41,9 @@ public class TakeOrderDetailLeftItemAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         ViewHolder holder = (ViewHolder) viewHolder;
+        TypeBean typeBean = mData.get(i);
+        holder.leftItemCheck.setChecked(typeBean.isChecked());
+        holder.leftItemCheck.setText(typeBean.getTitle());
     }
 
     @Override

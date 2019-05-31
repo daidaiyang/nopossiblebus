@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/include_title"/>
+    <RelativeLayout
+        android:id="@+id/first_result"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x253"
+        android:background="@color/text_black_0f">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/y40"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/x20"
+                android:text="“花椒油”"
+                android:textSize="@dimen/textSize63"
+                android:textStyle="bold"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/result_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="您要找的“花椒油”已为您找到"
+                android:textSize="@dimen/textSize40"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/micro"
+            android:layout_width="@dimen/x86"
+            android:layout_height="@dimen/x86"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/y40"
+            android:scaleType="centerInside"
+            android:src="@drawable/sound" />
+    </RelativeLayout>
+
+
+
+    <cn.bingoogolapple.refreshlayout.BGARefreshLayout
+        android:id="@+id/bgaLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
+
+
+
+</LinearLayout>

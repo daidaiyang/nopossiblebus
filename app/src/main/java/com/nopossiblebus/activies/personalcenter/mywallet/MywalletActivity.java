@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.nopossiblebus.R;
 import com.nopossiblebus.adapter.MyIntegralAdapter;
+import com.nopossiblebus.entity.bean.MyIntegralBean;
 import com.nopossiblebus.mvp.MVPBaseActivity;
 
 import java.util.ArrayList;
@@ -53,7 +54,7 @@ public class MywalletActivity extends MVPBaseActivity<MywalletContract.View, Myw
     @BindView(R.id.mywallet_recy)
     RecyclerView mywalletRecy;
 
-    private List<String> mData;
+    private List<MyIntegralBean> mData;
     private MyIntegralAdapter mAdapter;
 
     @Override
@@ -67,9 +68,6 @@ public class MywalletActivity extends MVPBaseActivity<MywalletContract.View, Myw
     private void initView() {
         title.setText("我的钱包");
         mData = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            mData.add("");
-        }
         mAdapter = new MyIntegralAdapter(getContext(),mData);
         mywalletRecy.setLayoutManager(new LinearLayoutManager(getContext()));
         mywalletRecy.setAdapter(mAdapter);

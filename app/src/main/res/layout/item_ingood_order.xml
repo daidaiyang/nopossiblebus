@@ -51,26 +51,22 @@
             android:id="@+id/item_good_img1"
             android:layout_width="@dimen/x184"
             android:layout_height="@dimen/y184"
-            android:layout_marginRight="@dimen/x17"
-            android:src="@color/colorPrimary"/>
+            android:layout_marginRight="@dimen/x17"/>
         <ImageView
             android:id="@+id/item_good_img2"
             android:layout_width="@dimen/x184"
             android:layout_height="@dimen/y184"
-            android:layout_marginRight="@dimen/x17"
-            android:src="@color/colorPrimary"/>
+            android:layout_marginRight="@dimen/x17"/>
         <ImageView
             android:id="@+id/item_good_img3"
             android:layout_width="@dimen/x184"
             android:layout_height="@dimen/y184"
-            android:layout_marginRight="@dimen/x17"
-            android:src="@color/colorPrimary"/>
+            android:layout_marginRight="@dimen/x17"/>
         <ImageView
             android:id="@+id/item_good_img4"
             android:layout_width="@dimen/x184"
             android:layout_height="@dimen/y184"
-            android:layout_marginRight="@dimen/x17"
-            android:src="@color/colorPrimary"/>
+            android:layout_marginRight="@dimen/x17"/>
     </LinearLayout>
 
     <LinearLayout

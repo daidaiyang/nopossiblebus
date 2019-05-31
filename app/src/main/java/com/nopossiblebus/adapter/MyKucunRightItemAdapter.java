@@ -9,7 +9,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.nopossiblebus.R;
+import com.nopossiblebus.entity.bean.BaseImageList;
+import com.nopossiblebus.entity.bean.ProductListBean;
+import com.nopossiblebus.utils.AppUtil;
 
 import java.util.List;
 
@@ -18,9 +22,9 @@ import butterknife.ButterKnife;
 
 public class MyKucunRightItemAdapter extends RecyclerView.Adapter {
     private Context mContext;
-    private List<String> mData;
+    private List<ProductListBean> mData;
 
-    public MyKucunRightItemAdapter(Context mContext, List<String> mData) {
+    public MyKucunRightItemAdapter(Context mContext, List<ProductListBean> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -33,8 +37,19 @@ public class MyKucunRightItemAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
         ViewHolder holder = (ViewHolder) viewHolder;
+        ProductListBean productListBean = mData.get(position);
+        List<BaseImageList> images_list = productListBean.getImages_list();
+        if (images_list!=null&&images_list.size()>0){
+            BaseImageList baseImageList = images_list.get(0);
+            Glide.with(mContext)
+                    .load(baseImageList.getUrl())
+                    .into(holder.rightitemImg);
+        }
+        holder.rightitemTitle.setText(productListBean.getName());
+        holder.rightitemPriceSale.setText("￥"+AppUtil.get2xiaoshu(productListBean.getSell_price()));
+        holder.rightitemPriceBuy.setText("￥"+AppUtil.get2xiaoshu(productListBean.getStock_price()));
     }
 
     @Override

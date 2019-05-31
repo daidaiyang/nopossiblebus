@@ -12,8 +12,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import com.nopossiblebus.R;
+import com.nopossiblebus.http.http.HttpManager;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
-import com.ygs.rxretrofitlibrary.retrofit_rx.http.HttpManager;
 
 import java.lang.reflect.ParameterizedType;
 

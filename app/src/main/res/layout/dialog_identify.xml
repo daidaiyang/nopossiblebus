@@ -17,28 +17,31 @@
         android:layout_marginTop="@dimen/y100"
         android:layout_height="wrap_content">
         <View
-            android:layout_width="@dimen/x590"
+            android:id="@+id/line1"
+            android:layout_width="@dimen/x266"
             android:layout_height="@dimen/y2"
             android:layout_marginLeft="@dimen/x14"
-            android:layout_marginTop="@dimen/y15"
-            android:background="@color/line_cc"/>
+            android:layout_marginTop="@dimen/y15"/>
         <View
             android:id="@+id/dialog_tijiao_cir"
             android:layout_width="@dimen/x29"
-            android:layout_height="@dimen/y29"
-            android:background="@drawable/circle_point_x29"/>
+            android:layout_height="@dimen/y29"/>
         <View
             android:id="@+id/dialog_shenhe_cir"
             android:layout_width="@dimen/x29"
             android:layout_height="@dimen/y29"
-            android:layout_marginLeft="@dimen/x266"
-            android:background="@drawable/circle_point_x29_cc"/>
+            android:layout_marginLeft="@dimen/x266"/>
+        <View
+            android:id="@+id/line2"
+            android:layout_width="@dimen/x320"
+            android:layout_height="@dimen/y2"
+            android:layout_marginLeft="@dimen/x281"
+            android:layout_marginTop="@dimen/y15"/>
         <View
             android:id="@+id/dialog_result_cir"
             android:layout_width="@dimen/x29"
             android:layout_height="@dimen/y29"
-            android:layout_alignParentEnd="true"
-            android:background="@drawable/circle_point_x29_cc"/>
+            android:layout_alignParentEnd="true"/>
 
     </RelativeLayout>
 
@@ -73,6 +76,36 @@
             android:text="审核结果"/>
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/info_ll"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x120"
+        android:layout_marginBottom="@dimen/x60"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_marginLeft="@dimen/x58"
+            android:layout_marginRight="@dimen/x58"
+            android:textSize="@dimen/textSize35"/>
+
+        <TextView
+            android:id="@+id/reason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x58"
+            android:layout_marginRight="@dimen/x58"
+            android:layout_marginTop="@dimen/x30"
+            android:textSize="@dimen/textSize35"
+            android:textColor="@color/text_black_66"/>
+
+
+    </LinearLayout>
     <TextView
         android:id="@+id/dialog_tijiao"
         android:layout_width="@dimen/x562"
